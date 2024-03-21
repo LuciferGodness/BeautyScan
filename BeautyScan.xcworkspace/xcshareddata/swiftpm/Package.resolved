@@ -1,0 +1,15 @@
+{
+  "originHash" : "852972e397d73402f6ee50fedaf9887a6ca45a17eeff0fa9e5672908fc515621",
+  "pins" : [
+    {
+      "identity" : "openaiswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swift-Almanac/OpenAISwift",
+      "state" : {
+        "revision" : "5966e3c4484a8f5cc1db44e8be6e14736c704df3",
+        "version" : "1.5.0"
+      }
+    }
+  ],
+  "version" : 3
+}

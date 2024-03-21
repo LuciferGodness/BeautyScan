@@ -1,0 +1,6 @@
+framework module Pods_BeautyScan {
+  umbrella header "Pods-BeautyScan-umbrella.h"
+
+  export *
+  module * { export * }
+}

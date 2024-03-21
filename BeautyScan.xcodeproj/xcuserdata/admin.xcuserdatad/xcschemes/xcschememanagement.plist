@@ -7,7 +7,25 @@
 		<key>BeautyScan.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8430EDAB2AEFD1BF003DD766</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8430EDC12AEFD1C0003DD766</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8430EDCB2AEFD1C0003DD766</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
