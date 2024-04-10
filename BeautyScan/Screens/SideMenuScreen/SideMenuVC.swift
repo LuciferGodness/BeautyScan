@@ -80,7 +80,7 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
         case .mainOptions:
             return 40
         case .additionalOptions:
-            return 110
+            return 150
         case .profile:
             return 0
         }

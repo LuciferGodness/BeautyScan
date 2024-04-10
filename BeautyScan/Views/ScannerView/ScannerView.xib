@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScannerView" customModule="BeautyScan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scannerFrame" translatesAutoresizingMaskIntoConstraints="NO" id="fql-fy-ffJ">
+                    <rect key="frame" x="21.666666666666657" y="151" width="350" height="350"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="350" id="4K9-8x-K7R"/>
+                        <constraint firstAttribute="height" constant="350" id="per-UC-LcH"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ev-lW-oHw">
+                    <rect key="frame" x="0.0" y="682" width="393" height="180"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-sq-sYN">
+                            <rect key="frame" x="161.66666666666666" y="60" width="70" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="0A5-We-5yo"/>
+                                <constraint firstAttribute="width" constant="70" id="QzY-oz-phX"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="circleButton"/>
+                            <connections>
+                                <action selector="takePhoto" destination="iN0-l3-epB" eventType="touchUpInside" id="JSE-rq-Ddj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="whiteAsset"/>
+                    <constraints>
+                        <constraint firstItem="jBk-sq-sYN" firstAttribute="centerX" secondItem="5ev-lW-oHw" secondAttribute="centerX" id="7BL-US-hO0"/>
+                        <constraint firstAttribute="height" constant="180" id="ESS-Mi-Kbc"/>
+                        <constraint firstItem="jBk-sq-sYN" firstAttribute="centerY" secondItem="5ev-lW-oHw" secondAttribute="centerY" id="EZj-tl-yCp"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-qn-QfN">
+                    <rect key="frame" x="40" y="572" width="313" height="70"/>
+                    <color key="backgroundColor" name="scannerTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="5MC-OF-qfe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" name="whiteAsset"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5ev-lW-oHw" secondAttribute="trailing" id="Ft2-Kc-V4L"/>
+                <constraint firstItem="5ev-lW-oHw" firstAttribute="top" secondItem="wHX-qn-QfN" secondAttribute="bottom" constant="40" id="Jrd-NU-9Nm"/>
+                <constraint firstItem="fql-fy-ffJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-100" id="PQ9-yw-3rc"/>
+                <constraint firstAttribute="bottom" secondItem="5ev-lW-oHw" secondAttribute="bottom" constant="-10" id="VUy-Ng-yGj"/>
+                <constraint firstItem="5ev-lW-oHw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wb2-M5-GYE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wHX-qn-QfN" secondAttribute="trailing" constant="40" id="bEw-lB-hKy"/>
+                <constraint firstItem="fql-fy-ffJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="d0e-AH-mdN"/>
+                <constraint firstItem="wHX-qn-QfN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="j1B-9T-jVo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomView" destination="5ev-lW-oHw" id="ZGJ-19-jAg"/>
+                <outlet property="scannerFrame" destination="fql-fy-ffJ" id="o2U-s3-Xal"/>
+                <outlet property="scannerHint" destination="wHX-qn-QfN" id="6t3-nQ-Hae"/>
+            </connections>
+            <point key="canvasLocation" x="36" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circleButton" width="64" height="64"/>
+        <image name="scannerFrame" width="512" height="512"/>
+        <namedColor name="scannerTextColor">
+            <color red="0.30196078431372547" green="0.32549019607843138" blue="0.32549019607843138" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteAsset">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

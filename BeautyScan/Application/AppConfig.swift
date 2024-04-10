@@ -13,7 +13,7 @@ enum AppConfig {
     }
     
     static var ngrokDomain: String {
-        "https://53bc-91-197-3-158.ngrok-free.app"
+        "https://61f0-91-197-3-158.ngrok-free.app"
     }
     
     static var googleDomain: String {
@@ -40,29 +40,4 @@ enum AppConfig {
     /*static func analyzeSkinRequest(response: SkinAnalizeDTO) -> String {
         return "Ответ дай на русском. Проанализируй и дай рекомендации: тип кожи: \(response.getSkinTypeDescription()), поры(левая щека, правая щека, подбородок, лоб): \(response.getTestResultsDescription(testType: { $0.poresLeftCheek.value })), \(response.getTestResultsDescription(testType: { $0.poresRightCheek.value })), \(response.getTestResultsDescription(testType: { $0.poresJaw.value })), \(response.getTestResultsDescription(testType: { $0.poresForehead.value })) acne: \(response.getTestResultsDescription(testType: { $0.acne.value })), wrinkles(forehead, glabella): \(response.getTestResultsDescription(testType: { $0.foreheadWrinkle.value })), \(response.getTestResultsDescription(testType: { $0.glabellaWrinkle.value }))"
     }*/
-    
-    static var firstText: String {
-        "Если вы здесь впервые, то вам высветятся вопросы для сбора информации о состоянии вашей кожи, чтобы мы лучше могли советовать вам продукты"
-    }
-    
-    static var secondText: String {
-        "Приложение поможет вам определить, какие продукты подходят именно для вас, учитывая особенности вашей кожи."
-    }
-    
-    static var thirdText: String {
-        "Откройте для себя персонализированные рекомендации по уходу за кожей, разработанные специально для вас и вашего типа кожи."
-    }
-
-    static var fourthText: String {
-        "Узнайте больше о заботе о коже и найдите подходящие продукты."
-    }
-
-    static var fifthText: String {
-        "Исследуйте мир красоты и ухода за кожей с нашим приложением, где каждый совет и рекомендация созданы с учетом вашей уникальной кожи."
-    }
-
-    static var sixthText: String {
-        "Получите персонализированные рекомендации о продуктах для кожи, основанные на вашем стиле жизни, предпочтениях и уровне увлажнения кожи."
-    }
-
 }

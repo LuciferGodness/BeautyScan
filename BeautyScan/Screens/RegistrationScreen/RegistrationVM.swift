@@ -32,11 +32,6 @@ final class RegistrationVM: PRegistrationVM {
         apiService?.verifyLoginCode(phoneNumber: phoneNumber ?? "", code: code ?? "")
             .observe(on: MainScheduler.instance)
             .subscribe(onSuccess: { response in
-                //TODO: addLocalizable
-                guard let token = response.token else {
-                    self.view?.showAlert(message: "Token not received", nil, title: "Error", okTitle: "OK")
-                    return
-                }
                 self.view?.openHome()
             }, onFailure: { error in
                 self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "OK")

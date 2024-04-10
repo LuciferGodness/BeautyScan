@@ -51,6 +51,9 @@ final class ApiServices {
         urlRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
         
         if contentType == "application/json" {
+            if let token = AppState.current.accessToken {
+                urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            }
             urlRequest.httpBody = try? JSONEncoder().encode(model)
         } else if contentType == "application/x-www-form-urlencoded" {
             urlRequest.httpBody = model.formsData.data(using: .utf8)

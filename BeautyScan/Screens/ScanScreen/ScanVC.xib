@@ -22,8 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="testImage" translatesAutoresizingMaskIntoConstraints="NO" id="VVa-sQ-uBk">
-                    <rect key="frame" x="20" y="79" width="353" height="300"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="testImage" translatesAutoresizingMaskIntoConstraints="NO" id="VVa-sQ-uBk">
+                    <rect key="frame" x="40" y="79" width="313" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="x7C-im-eNA"/>
                     </constraints>
@@ -38,6 +38,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Learn More">
                         <color key="baseForegroundColor" name="white"/>
+                        <color key="baseBackgroundColor" name="buttonColor"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="startLoadingImage" destination="-1" eventType="touchUpInside" id="WcX-By-vhr"/>
@@ -101,6 +102,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Open Scan">
                         <color key="baseForegroundColor" name="white"/>
+                        <color key="baseBackgroundColor" name="buttonColor"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="openScan" destination="-1" eventType="touchUpInside" id="jfp-i9-g5U"/>
@@ -115,8 +117,8 @@
                 <constraint firstItem="eZc-c9-msp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9fQ-pp-0Aw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4mi-RD-lsr" secondAttribute="bottom" constant="19" id="ANs-vd-7U0"/>
                 <constraint firstItem="VVa-sQ-uBk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="H98-wv-ZES"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VVa-sQ-uBk" secondAttribute="trailing" constant="20" id="MhY-qS-tNK"/>
-                <constraint firstItem="VVa-sQ-uBk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NIl-Eo-VTK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VVa-sQ-uBk" secondAttribute="trailing" constant="40" id="MhY-qS-tNK"/>
+                <constraint firstItem="VVa-sQ-uBk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="NIl-Eo-VTK"/>
                 <constraint firstItem="JLX-vg-Lrq" firstAttribute="top" secondItem="eZc-c9-msp" secondAttribute="bottom" constant="20" id="UEs-6o-tMU"/>
                 <constraint firstItem="whU-cO-bmd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Urr-pG-0Ci"/>
                 <constraint firstItem="whU-cO-bmd" firstAttribute="top" secondItem="8vI-1J-cb7" secondAttribute="bottom" id="blN-28-wzm"/>

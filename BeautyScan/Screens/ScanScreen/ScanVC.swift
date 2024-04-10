@@ -82,7 +82,7 @@ final class ScanVC: BaseVC, PScanVC {
     }
     
     @IBAction private func openScan() {
-
+        self.present(ScanerAssembler.assemble(delegate: self), animated: true)
     }
     
     @IBAction private func openGallery() {
@@ -131,5 +131,11 @@ extension ScanVC: PHPickerViewControllerDelegate, UINavigationControllerDelegate
         let pickerViewController = PHPickerViewController(configuration: config)
         pickerViewController.delegate = self
         self.present(pickerViewController, animated: true, completion: nil)
+    }
+}
+
+extension ScanVC: ScanerVCDelegate {
+    func didCapturePhoto(_ image: UIImage) {
+        loadedImage.image = image
     }
 }

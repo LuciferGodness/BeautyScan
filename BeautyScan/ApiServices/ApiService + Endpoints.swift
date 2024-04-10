@@ -12,7 +12,6 @@ protocol PApiServices {
     func getDataForHome() -> Single<HomeDTO>
     func searchProduct(producrName: String) -> Single<SearchProductDTO>
     func getCodeForLogin(phone: String?) -> Single<SMSResponseDTO>
-    func getProductsFromUserSearch(productName: String) -> Single<HomeSearchDTO>
 }
 
 extension ApiServices: PApiServices {
@@ -31,13 +30,13 @@ extension ApiServices: PApiServices {
     
     func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO> {
         sendRequest(url: .verifyCode, model: VerifyRequestModel(phoneNumber: phoneNumber, code: code), method: .post, contentType: "application/json")
+            .map { (verifyResponseDTO: VerifyResponseDTO) in
+                AppState.current.accessToken = verifyResponseDTO.token
+                return verifyResponseDTO
+            }
     }
     
     func getSkinType(skinPhoto: UIImage) -> Single<SkinAnalizeDTO> {
         sendRequest(url: .skinTypeURL, imageData: skinPhoto.sd_imageData() ?? Data(), fileName: "skin.jpg")
-    }
-    
-    func getProductsFromUserSearch(productName: String) -> Single<HomeSearchDTO> {
-        sendRequest(url: .searchUsersProduct(productName: productName))
     }
 }

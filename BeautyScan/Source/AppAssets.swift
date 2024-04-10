@@ -21,6 +21,7 @@ enum AppAssets: String {
     case articlesIcon
     
     case skinExample
+    case scannerFrame
     
     var image: UIImage? {
         rawValue.image

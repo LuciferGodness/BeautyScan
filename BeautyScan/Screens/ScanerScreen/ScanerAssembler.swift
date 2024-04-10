@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+enum ScanerAssembler {
+    static func assemble(delegate: ScanerVCDelegate) -> ScanerVC {
+        let view = ScanerVC()
+        let viewModel = ScanerVM()
+        
+        view.scannerViewModel = viewModel
+        view.delegate = delegate
+        view.modalPresentationStyle = .overFullScreen
+        viewModel.vc = view
+        
+        return view
+    }
+}

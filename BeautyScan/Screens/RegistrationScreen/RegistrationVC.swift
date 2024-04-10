@@ -18,7 +18,7 @@ final class RegistrationVC: BaseVC, PRegistrationVC {
     @IBOutlet private weak var rotatingLabel: UILabel!
     @IBOutlet private weak var phoneNumber: UITextField!
     
-    private let textArray = [AppConfig.firstText, AppConfig.secondText,  AppConfig.thirdText, AppConfig.fourthText, AppConfig.fifthText, AppConfig.sixthText]
+    private let textArray = [LocalizationKeys.firstRegText.localized(), LocalizationKeys.secondRegText.localized(),  LocalizationKeys.thirdRegText.localized(), LocalizationKeys.fourthRegText.localized(), LocalizationKeys.fifthRegText.localized(), LocalizationKeys.sixthRegText.localized()]
     private var timer: Timer?
     
     override var isNavigationBarLeftButton: Bool {

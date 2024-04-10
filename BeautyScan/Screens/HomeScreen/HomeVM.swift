@@ -10,10 +10,8 @@ import RxSwift
 
 protocol PHomeVM {
     var model: HomeDTO? { get }
-    var searchModel: HomeSearchDTO? { get }
     var searchData: SearchProductDTO? { get }
     func getData()
-    func getUserSearchProducts(productName: String)
 }
 
 final class HomeVM: PHomeVM {
@@ -21,7 +19,6 @@ final class HomeVM: PHomeVM {
     weak var view: PHomeVC?
     private let disposeBag = DisposeBag()
     var model: HomeDTO?
-    var searchModel: HomeSearchDTO?
     var searchData: SearchProductDTO?
     
     func getData() {
@@ -35,17 +32,6 @@ final class HomeVM: PHomeVM {
                 self.view?.reloadView()
             }, onFailure: { error in
                 //TODO: addLocalized
-                self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "Ok")
-            }).disposed(by: disposeBag)
-    }
-    
-    func getUserSearchProducts(productName: String) {
-        apiService?.getProductsFromUserSearch(productName: productName)
-            .observe(on: MainScheduler.instance)
-            .subscribe(onSuccess: { data in
-                self.searchModel = data
-                self.view?.reloadView()
-            }, onFailure: { error in
                 self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "Ok")
             }).disposed(by: disposeBag)
     }

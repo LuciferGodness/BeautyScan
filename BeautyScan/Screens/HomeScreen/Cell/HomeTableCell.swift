@@ -29,44 +29,11 @@ final class HomeTableCell: UITableViewCell {
         configureLearnMoreButton(with: searchData)
     }
     
-    func setupForProduct(result: ProductSearch?) {
-        configureLabelsForSearch(for: result)
-        configureImageViewForSearch(with: result?.imageLink ?? "")
-        configureLearnMoreButtonForSearch(with: result?.productLink ?? "")
-    }
-    
-    private func configureLabelsForSearch(for product: ProductSearch?) {
-        guard let price = product?.price, let roundedIntPrice = convertStringToRoundedInt(price) else {
-            return
-        }
-        //TODO: addConstatnts
-        priceLabel.text = convertToPrice(number: convertDollarsToRubles(dollarsAmount: roundedIntPrice, exchangeRate: 90))
-        descriptionLabel.text = product?.name
-        brandNameLabel.text = product?.brand
-    }
-    
-    private func configureImageViewForSearch(with urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        tableImageView.sd_setImage(with: url, completed: nil)
-    }
-    
-    private func configureLearnMoreButtonForSearch(with searchData: String) {
-        learnMoreBtn.isHidden = false
-        link = searchData
-    }
-    
     private func configureLabels(for product: Product) {
         let price = convertToPrice(number: product.price.current ?? 0)
         priceLabel.text = price
         descriptionLabel.text = product.name
         brandNameLabel.text = product.brand.name
-    }
-    
-    private func convertDollarsToRubles(dollarsAmount: Int, exchangeRate: Int) -> Int {
-        let rublesAmount = dollarsAmount * exchangeRate
-        return rublesAmount
     }
     
     private func convertToPrice(number: Int, prefix: String = "") -> String {
@@ -97,7 +64,6 @@ final class HomeTableCell: UITableViewCell {
         }
     }
     
-    
     @IBAction func learnMoreAction() {
         if let link = link {
             openLink(url: URL(string: link))
@@ -111,13 +77,5 @@ final class HomeTableCell: UITableViewCell {
         if app.canOpenURL(url) {
             app.open(url, options: [:], completionHandler: nil)
         }
-    }
-    
-    private func convertStringToRoundedInt(_ stringValue: String) -> Int? {
-        guard let floatValue = Float(stringValue) else {
-            return nil
-        }
-        let roundedIntValue = Int(round(floatValue))
-        return roundedIntValue
     }
 }
