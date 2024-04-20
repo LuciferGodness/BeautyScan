@@ -32,5 +32,8 @@ final class AboutSkinVC: BaseVC, PAboutSkinVC {
     }
     
     // MARK: - Navigation
-
+    
+    @IBAction func doctorAppointment() {
+        navigationController?.pushViewController(AppointmentAssembler.assemble(), animated: true)
+    }
 }

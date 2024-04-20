@@ -14,10 +14,11 @@ protocol PScanVC: PBaseVC {
 }
 
 final class ScanVC: BaseVC, PScanVC {
-    @IBOutlet private weak var productDescription: UILabel!
+    @IBOutlet private weak var productDescription: UITextView!
     @IBOutlet private weak var loadedImage: UIImageView!
     @IBOutlet private weak var segmentControl: UISegmentedControl!
     var vm: PScanVM?
+    private let searchField = UITextField(frame: CGRect(x: 0, y: 0, width: 295, height: 48))
     private var captureSession: AVCaptureSession!
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var overlayView: UIView!
@@ -25,11 +26,6 @@ final class ScanVC: BaseVC, PScanVC {
     private var ingredients = ""
     private var alternatives = ""
     private var originalText = ""
-    
-    //TODO: addLocalizable
-    override var navigationBarTitle: String? {
-        "Scan"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +36,20 @@ final class ScanVC: BaseVC, PScanVC {
         segmentControl.setTitleTextAttributes(titleTextAttributesDisabled as [NSAttributedString.Key : Any],
                                               for: .disabled)
         segmentControl.addTarget(self, action: #selector(segmentControlValueChanged(_:)), for: .valueChanged)
+        
+        setupTextField()
+        productDescription.delegate = self
+    }
+    
+    private func setupTextField() {
+        searchField.delegate = self
+        searchField.setLeftPaddingPoints(15)
+        searchField.backgroundColor = AppColors.whiteAsset.color
+        searchField.layer.cornerRadius = 8
+        searchField.leftView = UIView(frame: .init(x: 0, y: 0, width: 15, height: searchField.frame.height))
+        searchField.textColor = AppColors.blackAsset.color
+        searchField.placeholder = LocalizationKeys.productLink.localized()
+        navigationItem.titleView = searchField
     }
     
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
@@ -139,3 +149,46 @@ extension ScanVC: ScanerVCDelegate {
         loadedImage.image = image
     }
 }
+
+extension ScanVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        startLoading()
+        
+        let textToSend: String
+        if let productName = extractProductName(from: textField.text ?? "") {
+            textToSend = "\(productName); \(AppConfig.openAIText)"
+        } else {
+            textToSend = "\(textField.text ?? ""); \(AppConfig.openAIText)"
+        }
+        
+        vm?.sendOpenAIRequest(textToSend)
+        
+        return true
+    }
+    
+    func extractProductName(from url: String) -> String? {
+        let components = url.components(separatedBy: "/")
+        if let index = components.firstIndex(of: "product") {
+            let productNameComponents = components[(index + 1)...]
+            let productName = productNameComponents.joined(separator: " ")
+            return productName
+        }
+        
+        if let lastComponent = components.last {
+            let productName = lastComponent.replacingOccurrences(of: "-", with: " ")
+            return productName
+        }
+        
+        return nil
+    }
+}
+
+extension ScanVC: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL,
+                  in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL)
+        return false
+    }
+}
+

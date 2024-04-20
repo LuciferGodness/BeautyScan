@@ -13,6 +13,7 @@ enum AppColors: String {
     case grayAsset
     case menuBackgroundColor
     case textFieldBackground
+    case buttonColor
     
     var color: UIColor? {
         UIColor(named: self.rawValue)

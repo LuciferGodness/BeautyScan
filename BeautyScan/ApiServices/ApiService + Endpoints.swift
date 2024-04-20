@@ -12,6 +12,7 @@ protocol PApiServices {
     func getDataForHome() -> Single<HomeDTO>
     func searchProduct(producrName: String) -> Single<SearchProductDTO>
     func getCodeForLogin(phone: String?) -> Single<SMSResponseDTO>
+    func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO>
 }
 
 extension ApiServices: PApiServices {
@@ -38,5 +39,9 @@ extension ApiServices: PApiServices {
     
     func getSkinType(skinPhoto: UIImage) -> Single<SkinAnalizeDTO> {
         sendRequest(url: .skinTypeURL, imageData: skinPhoto.sd_imageData() ?? Data(), fileName: "skin.jpg")
+    }
+    
+    func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO> {
+        sendRequest(url: .getDoctorInfo(doctorId: doctorId))
     }
 }

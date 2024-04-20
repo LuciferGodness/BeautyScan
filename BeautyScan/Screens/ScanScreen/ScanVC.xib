@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanVC" customModule="BeautyScan" customModuleProvider="target">
             <connections>
                 <outlet property="loadedImage" destination="VVa-sQ-uBk" id="2zA-Nx-3YW"/>
-                <outlet property="productDescription" destination="Xmz-S6-GXY" id="mkM-oe-8nR"/>
+                <outlet property="productDescription" destination="BtU-oB-xkn" id="Ou5-bc-p65"/>
                 <outlet property="segmentControl" destination="whU-cO-bmd" id="cEo-rv-9wK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -47,19 +47,20 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZc-c9-msp">
                     <rect key="frame" x="20" y="450" width="353" height="284"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-S6-GXY">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-oB-xkn">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="36.333333333333336"/>
+                            <color key="textColor" name="blackAsset"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="black"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                        </textView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Xmz-S6-GXY" firstAttribute="top" secondItem="oFD-rv-WdD" secondAttribute="top" id="0BC-Jp-2d2"/>
-                        <constraint firstItem="Xmz-S6-GXY" firstAttribute="width" secondItem="eZc-c9-msp" secondAttribute="width" id="EUn-G3-LW0"/>
-                        <constraint firstAttribute="bottom" secondItem="Xmz-S6-GXY" secondAttribute="bottom" id="Ggg-aH-XYf"/>
-                        <constraint firstItem="Xmz-S6-GXY" firstAttribute="leading" secondItem="eZc-c9-msp" secondAttribute="leading" id="jyj-2g-sYF"/>
-                        <constraint firstAttribute="trailing" secondItem="Xmz-S6-GXY" secondAttribute="trailing" id="noi-M1-fIk"/>
+                        <constraint firstAttribute="bottom" secondItem="BtU-oB-xkn" secondAttribute="bottom" id="KaC-ad-UF6"/>
+                        <constraint firstItem="BtU-oB-xkn" firstAttribute="width" secondItem="eZc-c9-msp" secondAttribute="width" id="OCl-uR-Oto"/>
+                        <constraint firstAttribute="trailing" secondItem="BtU-oB-xkn" secondAttribute="trailing" id="ak9-Dk-5pJ"/>
+                        <constraint firstItem="BtU-oB-xkn" firstAttribute="leading" secondItem="eZc-c9-msp" secondAttribute="leading" id="b5c-uz-4ii"/>
+                        <constraint firstItem="BtU-oB-xkn" firstAttribute="top" secondItem="eZc-c9-msp" secondAttribute="top" id="sN1-1D-8ef"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="oFD-rv-WdD"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="iRQ-tw-QEe"/>
@@ -136,6 +137,9 @@
     <resources>
         <image name="testImage" width="900" height="900"/>
         <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blackAsset">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="buttonColor">

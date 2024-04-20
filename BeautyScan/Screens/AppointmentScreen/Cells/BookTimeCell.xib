@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BookTimeCell" customModule="BeautyScan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHr-T5-QKy">
+                        <rect key="frame" x="15" y="145" width="360" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="o0G-h8-79K"/>
+                        </constraints>
+                        <color key="tintColor" name="buttonColor"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Book now">
+                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="baseForegroundColor" name="whiteAsset"/>
+                            <color key="baseBackgroundColor" name="buttonColor"/>
+                        </buttonConfiguration>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="EHr-T5-QKy" secondAttribute="trailing" constant="15" id="1kC-jE-btJ"/>
+                    <constraint firstAttribute="bottom" secondItem="EHr-T5-QKy" secondAttribute="bottom" constant="10" id="RPV-9l-25T"/>
+                    <constraint firstItem="EHr-T5-QKy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dYv-sc-U9U"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="37" y="20"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="buttonColor">
+            <color red="0.51764705882352946" green="0.36470588235294116" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteAsset">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

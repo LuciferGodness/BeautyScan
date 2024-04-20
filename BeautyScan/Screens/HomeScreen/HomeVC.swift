@@ -15,7 +15,10 @@ final class HomeVC: BaseVC, PHomeVC {
     @IBOutlet private weak var tableView: UITableView!
     var vm: PHomeVM?
     private var searchDataItem: [Int: Item] = [:]
-    private let searchField = UITextField(frame: CGRect(x: 0, y: 0, width: 270, height: 48))
+    
+    override var navigationBarTitle: String? {
+        "Home"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +29,12 @@ final class HomeVC: BaseVC, PHomeVC {
     
     private func setupUI() {
         setupTableView()
-        setupTextField()
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerCell(ofType: HomeTableCell.self)
-    }
-    
-    private func setupTextField() {
-        searchField.delegate = self
-        searchField.textColor = AppColors.blackAsset.color
-        searchField.placeholder = LocalizationKeys.productLink.localized()
-        navigationItem.titleView = searchField
     }
     
     func reloadView() {
@@ -88,11 +83,3 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-extension HomeVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
-

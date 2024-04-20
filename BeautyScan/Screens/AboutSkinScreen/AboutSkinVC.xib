@@ -31,6 +31,9 @@
                         <color key="baseForegroundColor" name="white"/>
                         <color key="baseBackgroundColor" name="buttonColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="doctorAppointment" destination="-1" eventType="touchUpInside" id="nHx-o1-kgM"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsH-PV-wYn">
                     <rect key="frame" x="20" y="754" width="166" height="45"/>

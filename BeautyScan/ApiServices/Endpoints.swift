@@ -14,6 +14,7 @@ enum Endpoints {
     case registrationCode
     case verifyCode
     case skinTypeURL
+    case getDoctorInfo(doctorId: Int)
     
     var string: String {
         switch self {
@@ -29,6 +30,8 @@ enum Endpoints {
             return "https://skin-analyze.p.rapidapi.com/facebody/analysis/skinanalyze"
         case let .searchUsersProduct(productName: productName):
             return "\(AppConfig.searchUsersProduct)\(productName)"
+        case let .getDoctorInfo(doctorId: doctorId):
+            return "\(AppConfig.ngrokDomain)/doctors/\(doctorId)/appointments"
         }
     }
 }

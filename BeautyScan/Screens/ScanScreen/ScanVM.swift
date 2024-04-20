@@ -12,6 +12,7 @@ import OpenAISwift
 
 protocol PScanVM {
     func scanTextFromImage(cgImage: CGImage)
+    func sendOpenAIRequest(_ requestChat: String)
 }
 
 final class ScanVM: PScanVM {
@@ -55,7 +56,7 @@ final class ScanVM: PScanVM {
         request.recognitionLevel = .fast
     }
     
-    private func sendOpenAIRequest(_ requestChat: String) {
+   func sendOpenAIRequest(_ requestChat: String) {
         let chatArr = [ChatMessage(role: .user, content: requestChat)]
         self.client?.sendChat(with: chatArr,
                               temperature: 0.1,
