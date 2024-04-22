@@ -37,8 +37,8 @@ extension ApiServices: PApiServices {
             }
     }
     
-    func getSkinType(skinPhoto: UIImage) -> Single<SkinAnalizeDTO> {
-        sendRequest(url: .skinTypeURL, imageData: skinPhoto.sd_imageData() ?? Data(), fileName: "skin.jpg")
+    func getQuestions() -> Single<[QuestionsDTO]> {
+        sendRequest(url: .questions)
     }
     
     func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO> {

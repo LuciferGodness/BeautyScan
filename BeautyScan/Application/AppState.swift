@@ -16,11 +16,10 @@ final class AppState {
     private var delegate: RootViewControllerDelegate = SceneDelegate()
     static var current = AppState()
     
-    @UserDefault(key: UserDefaultsKey.skinType.rawValue, defaultValue: nil) var skinType: String?
-    @UserDefault(key: UserDefaultsKey.rightEyelid.rawValue, defaultValue: nil) var rightEyelid: String?
-    @UserDefault(key: UserDefaultsKey.leftEyelid.rawValue, defaultValue: nil) var leftEyelid: String?
-    @UserDefault(key: UserDefaultsKey.acne.rawValue, defaultValue: nil) var acne: String?
-    @UserDefault(key: UserDefaultsKey.blackhead.rawValue, defaultValue: nil) var blackhead: String?
+    @UserDefault(key: UserDefaultsKey.oilySkin.rawValue, defaultValue: nil) var oilySkin: String?
+    @UserDefault(key: UserDefaultsKey.resistentSkin.rawValue, defaultValue: nil) var resistentSkin: String?
+    @UserDefault(key: UserDefaultsKey.pigmentedSkin.rawValue, defaultValue: nil) var pigmentedSkin: String?
+    @UserDefault(key: UserDefaultsKey.wrinkledSkin.rawValue, defaultValue: nil) var wrinkledSkin: String?
     @KeychainToken(key: .authToken) var accessToken: String?
     
     func logout() {

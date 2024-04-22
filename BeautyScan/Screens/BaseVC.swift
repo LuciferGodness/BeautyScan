@@ -87,7 +87,7 @@ class BaseVC: UIViewController, PBaseVC {
     private func setupMenu() {
         let menu = SideMenuNavigationController(rootViewController: SideMenuAssembler.assemble())
         menu.presentationStyle = .menuSlideIn
-        menu.menuWidth = 280
+        menu.menuWidth = 320
 
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)

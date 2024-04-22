@@ -46,8 +46,8 @@
             filePath = "BeautyScan/Application/AppState.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "logout()"
             landmarkType = "7">
          </BreakpointContent>

@@ -9,11 +9,10 @@ import Foundation
 
 
 enum UserDefaultsKey: String {
-    case skinType
-    case rightEyelid
-    case leftEyelid
-    case acne
-    case blackhead
+    case oilySkin
+    case resistentSkin
+    case pigmentedSkin
+    case wrinkledSkin
 }
 
 @propertyWrapper

@@ -15,6 +15,7 @@ enum Endpoints {
     case verifyCode
     case skinTypeURL
     case getDoctorInfo(doctorId: Int)
+    case questions
     
     var string: String {
         switch self {
@@ -32,6 +33,8 @@ enum Endpoints {
             return "\(AppConfig.searchUsersProduct)\(productName)"
         case let .getDoctorInfo(doctorId: doctorId):
             return "\(AppConfig.ngrokDomain)/doctors/\(doctorId)/appointments"
+        case .questions:
+            return "\(AppConfig.ngrokDomain)/questions"
         }
     }
 }

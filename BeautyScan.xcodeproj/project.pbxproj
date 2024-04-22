@@ -77,7 +77,6 @@
 		84B99A5B2BC74DF200EF157B /* DoctorMainInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B99A592BC74DF200EF157B /* DoctorMainInfoCell.xib */; };
 		84C0EA942BA609BD007A6629 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84C0EA932BA609BD007A6629 /* OpenAISwift */; };
 		84C162622BAC52430011A7E0 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C162612BAC52430011A7E0 /* Keychain.swift */; };
-		84D5C2652B7A5B8A003F639F /* SkinAnalizeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C2642B7A5B8A003F639F /* SkinAnalizeDTO.swift */; };
 		84D5C2672B80DD77003F639F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C2662B80DD77003F639F /* AppState.swift */; };
 		84D5C2692B80E5F7003F639F /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5C2682B80E5F7003F639F /* UserDefault.swift */; };
 		84DBD0682BC0301E001B50F2 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBD0672BC0301E001B50F2 /* ScannerView.swift */; };
@@ -91,6 +90,7 @@
 		84DF37D22BCB3C600010A868 /* BookTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF37D02BCB3C600010A868 /* BookTimeCell.swift */; };
 		84DF37D32BCB3C600010A868 /* BookTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DF37D12BCB3C600010A868 /* BookTimeCell.xib */; };
 		84DF37D52BCC4D5A0010A868 /* DoctorInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF37D42BCC4D5A0010A868 /* DoctorInfoDTO.swift */; };
+		84F78C7A2BD416FB0002E8E2 /* QuestionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F78C792BD416FB0002E8E2 /* QuestionsDTO.swift */; };
 		C7D18C490E8A5BF4752D9C56 /* Pods_BeautyScan_BeautyScanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7406F6E8C1D8967A9A3821E5 /* Pods_BeautyScan_BeautyScanUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -188,7 +188,6 @@
 		84B99A582BC74DF200EF157B /* DoctorMainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorMainInfoCell.swift; sourceTree = "<group>"; };
 		84B99A592BC74DF200EF157B /* DoctorMainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorMainInfoCell.xib; sourceTree = "<group>"; };
 		84C162612BAC52430011A7E0 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		84D5C2642B7A5B8A003F639F /* SkinAnalizeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinAnalizeDTO.swift; sourceTree = "<group>"; };
 		84D5C2662B80DD77003F639F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		84D5C2682B80E5F7003F639F /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		84DBD0672BC0301E001B50F2 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
@@ -202,6 +201,7 @@
 		84DF37D02BCB3C600010A868 /* BookTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTimeCell.swift; sourceTree = "<group>"; };
 		84DF37D12BCB3C600010A868 /* BookTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTimeCell.xib; sourceTree = "<group>"; };
 		84DF37D42BCC4D5A0010A868 /* DoctorInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfoDTO.swift; sourceTree = "<group>"; };
+		84F78C792BD416FB0002E8E2 /* QuestionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsDTO.swift; sourceTree = "<group>"; };
 		A470605ABC3F85811CCE5A64 /* Pods-BeautyScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyScan.release.xcconfig"; path = "Target Support Files/Pods-BeautyScan/Pods-BeautyScan.release.xcconfig"; sourceTree = "<group>"; };
 		D0DCB7F3AA6E0C80AFDA7F58 /* Pods-BeautyScanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyScanTests.debug.xcconfig"; path = "Target Support Files/Pods-BeautyScanTests/Pods-BeautyScanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB4FE57487BE85EE391B573B /* Pods_BeautyScanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyScanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,8 +275,8 @@
 				845687A32B2E499D00B52B9B /* SMSResponseDTO.swift */,
 				8495FAC32B503EE200CEBD0C /* VerifyRequestModel.swift */,
 				8495FAC52B55549200CEBD0C /* VerifyResponseDTO.swift */,
-				84D5C2642B7A5B8A003F639F /* SkinAnalizeDTO.swift */,
 				84DF37D42BCC4D5A0010A868 /* DoctorInfoDTO.swift */,
+				84F78C792BD416FB0002E8E2 /* QuestionsDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -863,7 +863,6 @@
 				846B612F2B9E209500CE7F18 /* SideMenuSectionTypes.swift in Sources */,
 				847533202BA624540051263B /* ScanerVC.swift in Sources */,
 				845687A42B2E499D00B52B9B /* SMSResponseDTO.swift in Sources */,
-				84D5C2652B7A5B8A003F639F /* SkinAnalizeDTO.swift in Sources */,
 				842C9F962AFCE4A500E731D8 /* HomeVM.swift in Sources */,
 				8495235B2B0E131C004B4779 /* SearchProductDTO.swift in Sources */,
 				8481CF362B75100F00B2BC15 /* SideMenuCell.swift in Sources */,
@@ -875,6 +874,7 @@
 				847FAA062B1CF7C500B9BAA8 /* ScanVM.swift in Sources */,
 				84DF37D22BCB3C600010A868 /* BookTimeCell.swift in Sources */,
 				84DBD0722BC180B4001B50F2 /* String+Extension.swift in Sources */,
+				84F78C7A2BD416FB0002E8E2 /* QuestionsDTO.swift in Sources */,
 				8456879F2B2DEEC500B52B9B /* SMSRequestModel.swift in Sources */,
 				849523582B08E286004B4779 /* HomeTableCell.swift in Sources */,
 				84B99A562BC74D4100EF157B /* ImageCell.swift in Sources */,

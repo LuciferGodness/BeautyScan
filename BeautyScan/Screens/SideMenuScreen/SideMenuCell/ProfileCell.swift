@@ -8,12 +8,11 @@
 import UIKit
 
 final class ProfileCell: UITableViewCell {
-    @IBOutlet private weak var rightEyelid: UILabel!
-    @IBOutlet private weak var acne: UILabel!
-    @IBOutlet private weak var leftEyelid: UILabel!
-    @IBOutlet private weak var blackhead: UILabel!
+    @IBOutlet private weak var oilySkin: UILabel!
+    @IBOutlet private weak var sensitiveSkin: UILabel!
+    @IBOutlet private weak var pigmentedSkin: UILabel!
+    @IBOutlet private weak var wrinkledSkin: UILabel!
     @IBOutlet private weak var backView: UIView!
-    @IBOutlet private weak var skinType: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +22,9 @@ final class ProfileCell: UITableViewCell {
     
     func setup() {
         //TODO: addLocalizable
-        skinType.text = AppState.current.skinType ?? "Undefined"
-        rightEyelid.text = AppState.current.rightEyelid ?? "Undefined"
-        leftEyelid.text = AppState.current.leftEyelid ?? "Undefined"
-        acne.text = AppState.current.acne ?? "Undefined"
-        blackhead.text = AppState.current.blackhead ?? "Undefined"
+        oilySkin.text = AppState.current.oilySkin ?? "Undefined"
+        sensitiveSkin.text = AppState.current.resistentSkin ?? "Undefined"
+        pigmentedSkin.text = AppState.current.pigmentedSkin ?? "Undefined"
+        wrinkledSkin.text = AppState.current.wrinkledSkin ?? "Undefined"
     }
 }
