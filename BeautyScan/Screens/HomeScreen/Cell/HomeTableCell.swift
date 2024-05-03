@@ -19,8 +19,7 @@ final class HomeTableCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //TODO: addConstants
-        backView.layer.cornerRadius = 10
+        backView.layer.cornerRadius = DesignConstants.cornerRadius
     }
     
     func setup(product: Product, searchData: Item?) {
@@ -43,7 +42,7 @@ final class HomeTableCell: UITableViewCell {
         
         let formattedNumber = numberFormatter.string(from: NSNumber(value: number)) ?? ""
         
-        let finalString = "\(prefix)\(formattedNumber) ₽"
+        let finalString = "\(prefix)\(formattedNumber)\(LocalizationKeys.rubles.localized())"
         return finalString
     }
     
@@ -70,7 +69,6 @@ final class HomeTableCell: UITableViewCell {
         }
     }
     
-    //TODO: Place to BaseCell
     private func openLink(url: URL?) {
         let app = UIApplication.shared
         guard let url = url else { return }

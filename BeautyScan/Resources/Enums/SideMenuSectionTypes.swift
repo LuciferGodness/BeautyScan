@@ -50,14 +50,13 @@ enum MenuItem {
     case requestSupport
     case logout
     
-    //TODO: addLocalizable
     var label: String {
         switch self {
-        case .home: return "Home"
-        case .scanProduct: return "Scan Product"
-        case .learnSkinType: return "Learn Skin Type"
-        case .requestSupport: return "Request Support"
-        case .logout: return "Logout"
+        case .home: return LocalizationKeys.homeScreen.localized()
+        case .scanProduct: return LocalizationKeys.scan.localized()
+        case .learnSkinType: return LocalizationKeys.learnSkinType.localized()
+        case .requestSupport: return LocalizationKeys.support.localized()
+        case .logout: return LocalizationKeys.logout.localized()
         }
     }
     

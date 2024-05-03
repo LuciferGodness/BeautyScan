@@ -57,18 +57,18 @@ final class ScanVM: PScanVM {
     }
     
    func sendOpenAIRequest(_ requestChat: String) {
+       print(requestChat)
         let chatArr = [ChatMessage(role: .user, content: requestChat)]
         self.client?.sendChat(with: chatArr,
                               temperature: 0.1,
                               maxTokens: 3500,
                               completionHandler: { result in
             DispatchQueue.main.async {
-                print(result)
                 switch result {
                 case .success(let model):
                     self.view?.setText(text: model.choices?.first?.message.content)
-                    print(model)
                 case .failure(let error):
+                    print(error)
                     self.handleRecognitionError(error)
                     self.view?.endLoading()
                 }
@@ -78,7 +78,9 @@ final class ScanVM: PScanVM {
     
     private func handleRecognitionError(_ error: Error?) {
         if let error = error {
-            self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "OK")
+            self.view?.showAlert(message: error.localizedDescription, nil,
+                                 title: LocalizationKeys.error.localized(),
+                                 okTitle: LocalizationKeys.ok.localized())
         }
     }
 }

@@ -13,7 +13,6 @@ enum Endpoints {
     case searchUsersProduct(productName: String)
     case registrationCode
     case verifyCode
-    case skinTypeURL
     case getDoctorInfo(doctorId: Int)
     case questions
     
@@ -27,8 +26,6 @@ enum Endpoints {
             return "\(AppConfig.googleDomain)\(productName)"
         case .verifyCode:
             return AppConfig.verifyCodeUrl
-        case .skinTypeURL:
-            return "https://skin-analyze.p.rapidapi.com/facebody/analysis/skinanalyze"
         case let .searchUsersProduct(productName: productName):
             return "\(AppConfig.searchUsersProduct)\(productName)"
         case let .getDoctorInfo(doctorId: doctorId):

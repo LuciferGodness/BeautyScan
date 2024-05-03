@@ -13,10 +13,11 @@ protocol PApiServices {
     func searchProduct(producrName: String) -> Single<SearchProductDTO>
     func getCodeForLogin(phone: String?) -> Single<SMSResponseDTO>
     func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO>
+    func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO>
+    func getQuestions() -> Single<[QuestionsDTO]>
 }
 
 extension ApiServices: PApiServices {
-    
     func getDataForHome() -> Single<HomeDTO> {
         sendRequest(url: .homeURL)
     }

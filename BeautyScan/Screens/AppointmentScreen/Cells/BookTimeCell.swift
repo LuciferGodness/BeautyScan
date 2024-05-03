@@ -21,19 +21,20 @@ final class BookTimeCell: UITableViewCell {
         guard let selectedDate = selectedDate else { return }
         
         if verticalStackView != nil {
-            verticalStackView.removeFromSuperview()
-            labels.removeAll()
+            clearStackView()
         }
         
-        verticalStackView = createVerticalStackView()
-        self.addSubview(verticalStackView)
-        NSLayoutConstraint.activate([
-            verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            verticalStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            verticalStackView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -20)
-        ])
+        createVerticalStackView()
 
+        dateFormat(selectedDate: selectedDate, date: date)
+        
+        if !labels.isEmpty {
+            let horizontalStackView = createHorizontalStackView(with: labels.map { $0.label })
+            verticalStackView.addArrangedSubview(horizontalStackView)
+        }
+    }
+    
+    private func dateFormat(selectedDate: Date, date: [String]) {
         for dateString in date {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -52,20 +53,32 @@ final class BookTimeCell: UITableViewCell {
                 
             }
         }
-        
-        if !labels.isEmpty {
-            let horizontalStackView = createHorizontalStackView(with: labels.map { $0.label })
-            verticalStackView.addArrangedSubview(horizontalStackView)
-        }
     }
     
-    private func createVerticalStackView() -> UIStackView {
+    private func clearStackView() {
+        verticalStackView?.removeFromSuperview()
+        labels.removeAll()
+    }
+    
+    private func createVerticalStackView() {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = DesignConstants.cornerRadius
         stackView.alignment = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        verticalStackView = stackView
+        addSubview(verticalStackView)
+        
+        NSLayoutConstraint.activate([
+            verticalStackView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                       constant: DesignConstants.frameHeight),
+            verticalStackView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                        constant: DesignConstants.anchorStackView),
+            verticalStackView.topAnchor.constraint(equalTo: topAnchor,
+                                                   constant: DesignConstants.frameHeight),
+            verticalStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor,
+                                                      constant: DesignConstants.anchorStackView)
+        ])
     }
     
     private func formatTimeString(from date: Date) -> String {
@@ -102,7 +115,7 @@ final class BookTimeCell: UITableViewCell {
         label.text = text
         label.textAlignment = .center
         label.backgroundColor = AppColors.textFieldBackground.color
-        label.layer.cornerRadius = 10
+        label.layer.cornerRadius = DesignConstants.cornerRadius
         label.clipsToBounds = true
         label.heightAnchor.constraint(equalToConstant: 30).isActive = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +129,7 @@ final class BookTimeCell: UITableViewCell {
     private func createHorizontalStackView(with labels: [UILabel]) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: labels)
         stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.spacing = DesignConstants.cornerRadius
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
         return stackView

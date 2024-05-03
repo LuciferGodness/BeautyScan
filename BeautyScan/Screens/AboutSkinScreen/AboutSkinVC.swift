@@ -23,22 +23,24 @@ final class AboutSkinVC: BaseVC, PAboutSkinVC {
     @IBOutlet private weak var optionFive: UIButton!
     @IBOutlet private weak var progressView: UIProgressView!
     @IBOutlet private weak var countLabel: UILabel!
+    private var optionButtons: [UIButton] = []
     
     var vm: PAboutSkinVM?
     
     override var navigationBarTitle: String? {
-        "About Skin"
+        LocalizationKeys.aboutSkinScreen.localized()
     }
     
     override func viewDidLoad() {
+        optionButtons = [optionOne, optionTwo, optionThree, optionFour, optionFive]
         vm?.getQuestions()
         super.viewDidLoad()
-        optionOne.titleLabel?.numberOfLines = 0
-        optionTwo.titleLabel?.numberOfLines = 0
-        optionThree.titleLabel?.numberOfLines = 0
-        optionFour.titleLabel?.numberOfLines = 0
-        optionFive.titleLabel?.numberOfLines = 0
-        testView.layer.cornerRadius = 10
+        setupUI()
+    }
+    
+    private func setupUI() {
+        testView.layer.cornerRadius = DesignConstants.cornerRadius
+        optionButtons.forEach { $0.titleLabel?.numberOfLines = 0 }
     }
     
     @IBAction private func learnSkinType() {
@@ -47,15 +49,13 @@ final class AboutSkinVC: BaseVC, PAboutSkinVC {
     
     func displayQuestion(_ question: String, options: [String]) {
         questionText.text = question
-        optionOne.setTitle(options[0], for: .normal)
-        optionTwo.setTitle(options[1], for: .normal)
-        optionThree.setTitle(options[2], for: .normal)
-        optionFour.setTitle(options[3], for: .normal)
-        if options.endIndex == 5 {
-            optionFive.setTitle(options[4], for: .normal)
-            optionFive.isHidden = false
-        } else {
-            optionFive.isHidden = true
+        for (index, button) in optionButtons.enumerated() {
+            if index < options.count {
+                button.setTitle(options[index], for: .normal)
+                button.isHidden = false
+            } else {
+                button.isHidden = true
+            }
         }
         countLabel.text = "\(vm?.currentQuestionIndex ?? 0) из \(vm?.allQuestions ?? 0)"
     }

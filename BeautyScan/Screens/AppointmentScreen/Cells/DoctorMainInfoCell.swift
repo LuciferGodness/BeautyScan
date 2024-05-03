@@ -17,9 +17,9 @@ final class DoctorMainInfoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = DesignConstants.cornerRadius
         self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        doctorDescription.textContainer.lineFragmentPadding = 0
+        doctorDescription.textContainer.lineFragmentPadding = DesignConstants.zero
         doctorDescription.textContainerInset = .zero
     }
     

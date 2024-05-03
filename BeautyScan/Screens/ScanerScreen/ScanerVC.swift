@@ -60,7 +60,8 @@ final class ScanerVC: UIViewController, PScanerVC {
         guard let scannerView = nib.instantiate(withOwner: nil, options: nil).first as? ScannerView else {
             return nil
         }
-        scannerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        scannerView.frame = CGRect(x: DesignConstants.zero, y: DesignConstants.zero,
+                                   width: view.bounds.width, height: view.bounds.height)
         return scannerView
     }
 }

@@ -17,7 +17,7 @@ final class AppointmentVC: BaseVC, PAppointmentVC {
     var viewModel: PAppointmentVM?
     
     override var navigationBarTitle: String? {
-        "Appointment"
+        LocalizationKeys.appointment.localized()
     }
     
     override var isNavigationBarLeftButton: Bool {
@@ -27,6 +27,10 @@ final class AppointmentVC: BaseVC, PAppointmentVC {
     override func viewDidLoad() {
         viewModel?.getAppointment()
         super.viewDidLoad()
+        setupTable()
+    }
+    
+    private func setupTable() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerCell(ofType: DoctorMainInfoCell.self)
@@ -48,66 +52,80 @@ extension AppointmentVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 2 {
+        switch indexPath.row {
+        case 2:
             420
-        } else if indexPath.row == 3 {
+        case 3:
             200
-        }
-        else {
+        default:
             300
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueCell(ofType: ImageCell.self) else {
-                return UITableViewCell()
-            }
-            
-            return cell
-        } else if indexPath.row == 2 {
-            guard let cell = tableView.dequeueCell(ofType: WeekScheduleCell.self) else {
-                return UITableViewCell()
-            }
-            
-            let hostingController = UIHostingController(rootView: CalendarView(didSelectDate: { date in
-                self.didSelectDate(date)
-            }))
-            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-            addChild(hostingController)
-            hostingController.view.frame = cell.calendarView.frame
-            hostingController.view.layer.cornerRadius = 10
-            cell.calendarView.addSubview(hostingController.view)
-            
-            NSLayoutConstraint.activate([
-                hostingController.view.topAnchor.constraint(equalTo: cell.calendarView.topAnchor),
-                hostingController.view.leadingAnchor.constraint(equalTo: cell.calendarView.leadingAnchor),
-                hostingController.view.bottomAnchor.constraint(equalTo: cell.calendarView.bottomAnchor),
-                hostingController.view.trailingAnchor.constraint(equalTo: cell.calendarView.trailingAnchor),
-                hostingController.view.widthAnchor.constraint(equalTo: cell.calendarView.widthAnchor),
-                hostingController.view.heightAnchor.constraint(equalTo: cell.calendarView.heightAnchor)
-                ])
-            hostingController.view.contentMode = .scaleAspectFill
-            hostingController.view.clipsToBounds = true
-            hostingController.didMove(toParent: self)
-            
-            return cell
-        } else if indexPath.row == 3 {
-            guard let cell = tableView.dequeueCell(ofType: BookTimeCell.self) else {
-                return UITableViewCell()
-            }
-            cell.selectedDate = .now
-            cell.setup(date: viewModel?.model?.date ?? [])
-
-            return cell
-        } else {
-            guard let cell = tableView.dequeueCell(ofType: DoctorMainInfoCell.self) else {
-                return UITableViewCell()
-            }
-            cell.setup(model: viewModel?.model)
-            
-            return cell
+        switch indexPath.row {
+        case 0:
+            return configureImageCell(tableView: tableView, indexPath: indexPath)
+        case 2:
+            return configureWeekScheduleCell(tableView: tableView, indexPath: indexPath)
+        case 3:
+            return configureBookTimeCell(tableView: tableView, indexPath: indexPath)
+        default:
+            return configureDoctorMainInfoCell(tableView: tableView, indexPath: indexPath)
         }
+    }
+    
+    private func configureImageCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueCell(ofType: ImageCell.self) else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+    
+    private func configureWeekScheduleCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueCell(ofType: WeekScheduleCell.self) else {
+            return UITableViewCell()
+        }
+        
+        let hostingController = UIHostingController(rootView: CalendarView(didSelectDate: { [weak self] date in
+            self?.didSelectDate(date)
+        }))
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        addChild(hostingController)
+        hostingController.view.frame = cell.calendarView.frame
+        hostingController.view.layer.cornerRadius = DesignConstants.cornerRadius
+        cell.calendarView.addSubview(hostingController.view)
+        
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: cell.calendarView.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: cell.calendarView.leadingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: cell.calendarView.bottomAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: cell.calendarView.trailingAnchor),
+            hostingController.view.widthAnchor.constraint(equalTo: cell.calendarView.widthAnchor),
+            hostingController.view.heightAnchor.constraint(equalTo: cell.calendarView.heightAnchor)
+        ])
+        hostingController.view.contentMode = .scaleAspectFill
+        hostingController.view.clipsToBounds = true
+        hostingController.didMove(toParent: self)
+        
+        return cell
+    }
+    
+    private func configureBookTimeCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueCell(ofType: BookTimeCell.self) else {
+            return UITableViewCell()
+        }
+        cell.selectedDate = .now
+        cell.setup(date: viewModel?.model?.date ?? [])
+        return cell
+    }
+    
+    private func configureDoctorMainInfoCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueCell(ofType: DoctorMainInfoCell.self) else {
+            return UITableViewCell()
+        }
+        cell.setup(model: viewModel?.model)
+        return cell
     }
 }
 

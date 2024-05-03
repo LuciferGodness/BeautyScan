@@ -14,9 +14,9 @@ final class ScannerView: UIView {
     private var action: (() -> Void)?
     
     override func awakeFromNib() {
-        bottomView.layer.cornerRadius = 10
+        bottomView.layer.cornerRadius = DesignConstants.cornerRadius
         scannerFrame.image = AppAssets.scannerFrame.image?.withTintColor(AppColors.whiteAsset.color ?? .white)
-        scannerHint.layer.cornerRadius = 10
+        scannerHint.layer.cornerRadius = DesignConstants.cornerRadius
         scannerHint.clipsToBounds = true
         scannerHint.text = LocalizationKeys.scannerHint.localized()
     }

@@ -27,18 +27,20 @@ final class RegistrationVC: BaseVC, PRegistrationVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: addConstants
-        loginButton.layer.cornerRadius = 40
+        loginButton.layer.cornerRadius = DesignConstants.registrationCornerRadius
         loginButton.setImage(AppAssets.next.image?.withRenderingMode(.alwaysTemplate), for: .normal)
         loginButton.tintColor = AppColors.whiteAsset.color
-        phoneNumber.layer.cornerRadius = 40
+        phoneNumber.layer.cornerRadius = DesignConstants.registrationCornerRadius
         
-        timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(updateText), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: DesignConstants.timeInterval,
+                                     target: self,
+                                     selector: #selector(updateText),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     @objc private func updateText() {
         let randomIndex = Int(arc4random_uniform(UInt32(textArray.count)))
-        //TODO: addConstants
         UIView.animate(withDuration: 0.75, animations: {
                     self.rotatingLabel.alpha = 0.0
         }) { (_) in

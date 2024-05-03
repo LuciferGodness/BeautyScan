@@ -12,6 +12,6 @@ final class WeekScheduleCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        calendarView.layer.cornerRadius = 10
+        calendarView.layer.cornerRadius = DesignConstants.cornerRadius
     }
 }

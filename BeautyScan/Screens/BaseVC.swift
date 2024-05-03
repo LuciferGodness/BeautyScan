@@ -50,11 +50,6 @@ class BaseVC: UIViewController, PBaseVC {
         self.navigationItem.leftBarButtonItem = menuBarButton
     }
     
-    @objc
-    private func openScanScreen() {
-        navigationController?.pushViewController(ScanAssembler.assemble(), animated: true)
-    }
-    
     func startLoading() {
         loadingIndicator.color = .black
         loadingIndicator.startWithAppearAnimation()
@@ -87,7 +82,7 @@ class BaseVC: UIViewController, PBaseVC {
     private func setupMenu() {
         let menu = SideMenuNavigationController(rootViewController: SideMenuAssembler.assemble())
         menu.presentationStyle = .menuSlideIn
-        menu.menuWidth = 320
+        menu.menuWidth = DesignConstants.menuWidth
 
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
@@ -99,7 +94,7 @@ class BaseVC: UIViewController, PBaseVC {
         view.bringSubviewToFront(loadingIndicator)
         NSLayoutConstraint.activate([
             loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: DesignConstants.zero)
         ])
     }
 

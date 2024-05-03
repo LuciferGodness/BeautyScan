@@ -31,8 +31,9 @@ final class HomeVM: PHomeVM {
                 }
                 self.view?.reloadView()
             }, onFailure: { error in
-                //TODO: addLocalized
-                self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "Ok")
+                self.view?.showAlert(message: error.localizedDescription, nil,
+                                     title: LocalizationKeys.error.localized(),
+                                     okTitle: LocalizationKeys.ok.localized())
             }).disposed(by: disposeBag)
     }
     

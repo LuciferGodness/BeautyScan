@@ -78,11 +78,11 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch sections[section] {
         case .mainOptions:
-            return 40
+            return DesignConstants.registrationCornerRadius
         case .additionalOptions:
-            return 150
+            return DesignConstants.sideMenuCell
         case .profile:
-            return 0
+            return DesignConstants.zero
         }
     }
     

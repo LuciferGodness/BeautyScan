@@ -21,10 +21,11 @@ final class RegistrationVM: PRegistrationVM {
     func requestCode(phone: String?) {
         apiService?.getCodeForLogin(phone: phone)
             .observe(on: MainScheduler.instance)
-            .subscribe(onSuccess: { response in
-                print(response)
+            .subscribe(onSuccess: { _ in
             }, onFailure: { error in
-                self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "OK")
+                self.view?.showAlert(message: error.localizedDescription, nil,
+                                     title: LocalizationKeys.error.localized(),
+                                     okTitle: LocalizationKeys.ok.localized())
             }).disposed(by: disposeBag)
     }
     
@@ -34,7 +35,9 @@ final class RegistrationVM: PRegistrationVM {
             .subscribe(onSuccess: { response in
                 self.view?.openHome()
             }, onFailure: { error in
-                self.view?.showAlert(message: error.localizedDescription, nil, title: "Error", okTitle: "OK")
+                self.view?.showAlert(message: error.localizedDescription, nil,
+                                     title: LocalizationKeys.error.localized(),
+                                     okTitle: LocalizationKeys.ok.localized())
             }).disposed(by: disposeBag)
     }
 }

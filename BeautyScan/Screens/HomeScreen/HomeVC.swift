@@ -17,7 +17,7 @@ final class HomeVC: BaseVC, PHomeVC {
     private var searchDataItem: [Int: Item] = [:]
     
     override var navigationBarTitle: String? {
-        "Home"
+        LocalizationKeys.homeScreen.localized()
     }
 
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ final class HomeVC: BaseVC, PHomeVC {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        353
+        DesignConstants.cellHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

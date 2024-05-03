@@ -26,7 +26,7 @@ final class AppointmentVM: PAppointmentVM {
                 self.model = data
                 self.view?.reloadTable()
             }, onFailure: { error in
-                print(error)
+                
             }).disposed(by: disposeBag)
     }
 }

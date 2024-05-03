@@ -16,15 +16,13 @@ final class ProfileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //TODO: addConstants
-        backView.layer.cornerRadius = 10
+        backView.layer.cornerRadius = DesignConstants.cornerRadius
     }
     
     func setup() {
-        //TODO: addLocalizable
-        oilySkin.text = AppState.current.oilySkin ?? "Undefined"
-        sensitiveSkin.text = AppState.current.resistentSkin ?? "Undefined"
-        pigmentedSkin.text = AppState.current.pigmentedSkin ?? "Undefined"
-        wrinkledSkin.text = AppState.current.wrinkledSkin ?? "Undefined"
+        oilySkin.text = AppState.current.oilySkin ?? LocalizationKeys.undefined.localized()
+        sensitiveSkin.text = AppState.current.resistentSkin ?? LocalizationKeys.undefined.localized()
+        pigmentedSkin.text = AppState.current.pigmentedSkin ?? LocalizationKeys.undefined.localized()
+        wrinkledSkin.text = AppState.current.wrinkledSkin ?? LocalizationKeys.undefined.localized()
     }
 }

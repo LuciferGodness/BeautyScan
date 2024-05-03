@@ -8,6 +8,15 @@
 import Foundation
 
 enum LocalizationKeys: String {
+    case homeScreen
+    case aboutSkinScreen
+    case appointment
+    
+    case scan
+    case learnSkinType
+    case support
+    case logout
+    
     case firstRegText
     case secondRegText
     case thirdRegText
@@ -17,6 +26,33 @@ enum LocalizationKeys: String {
     case scannerHint
     
     case productLink
+    
+    case selectDate
+    case error
+    case ok
+    case rubles
+    
+    case general
+    case ingredients
+    case alternatives
+    case assetType
+    case undefined
+    
+    case skinType
+    case yourType
+    case gptRequest
+    case veryOily
+    case oily
+    case dry
+    case veryDry
+    case wrincled
+    case elastic
+    case pigmented
+    case notPigmented
+    case verySensitive
+    case sensitive
+    case resistant
+    case veryResistant
     
     func localized() -> String {
         rawValue.localized()
