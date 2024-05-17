@@ -15,6 +15,9 @@ enum Endpoints {
     case verifyCode
     case getDoctorInfo(doctorId: Int)
     case questions
+    case bookAppointment
+    case userAppointments
+    case allDoctors
     
     var string: String {
         switch self {
@@ -32,6 +35,12 @@ enum Endpoints {
             return "\(AppConfig.ngrokDomain)/doctors/\(doctorId)/appointments"
         case .questions:
             return "\(AppConfig.ngrokDomain)/questions"
+        case .bookAppointment:
+            return "\(AppConfig.ngrokDomain)/bookAppointment"
+        case .userAppointments:
+            return "\(AppConfig.ngrokDomain)/userAppointments"
+        case .allDoctors:
+            return "\(AppConfig.ngrokDomain)/doctors"
         }
     }
 }

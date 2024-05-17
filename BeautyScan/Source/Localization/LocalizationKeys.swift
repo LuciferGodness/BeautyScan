@@ -11,6 +11,7 @@ enum LocalizationKeys: String {
     case homeScreen
     case aboutSkinScreen
     case appointment
+    case doctors
     
     case scan
     case learnSkinType
@@ -53,6 +54,9 @@ enum LocalizationKeys: String {
     case sensitive
     case resistant
     case veryResistant
+    
+    case myAppointments
+    case doctorsSpecialty
     
     func localized() -> String {
         rawValue.localized()

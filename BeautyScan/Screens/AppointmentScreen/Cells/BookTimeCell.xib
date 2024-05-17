@@ -30,6 +30,9 @@
                             <color key="baseForegroundColor" name="whiteAsset"/>
                             <color key="baseBackgroundColor" name="buttonColor"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="bookTime" destination="KGk-i7-Jjw" eventType="touchUpInside" id="a15-vc-Myk"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

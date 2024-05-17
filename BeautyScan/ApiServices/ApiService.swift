@@ -46,6 +46,9 @@ final class ApiServices {
             return Single.error(ApiError.invalidURL)
         }
         var urlRequest = URLRequest(url: url)
+        if let token = AppState.current.accessToken {
+            addAuthorizationHeader(to: &urlRequest)
+        }
         urlRequest.httpMethod = method.rawValue
         
         return fetchData(urlRequest: urlRequest).asSingle()

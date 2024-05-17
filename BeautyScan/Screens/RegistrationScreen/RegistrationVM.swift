@@ -33,6 +33,8 @@ final class RegistrationVM: PRegistrationVM {
         apiService?.verifyLoginCode(phoneNumber: phoneNumber ?? "", code: code ?? "")
             .observe(on: MainScheduler.instance)
             .subscribe(onSuccess: { response in
+                AppState.current.accessToken = response.token
+                print(AppState.current.accessToken)
                 self.view?.openHome()
             }, onFailure: { error in
                 self.view?.showAlert(message: error.localizedDescription, nil,

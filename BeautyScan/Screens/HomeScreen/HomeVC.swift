@@ -25,6 +25,7 @@ final class HomeVC: BaseVC, PHomeVC {
         startLoading()
         vm?.getData()
         setupUI()
+        print(AppState.current.accessToken)
     }
     
     private func setupUI() {

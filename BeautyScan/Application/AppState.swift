@@ -20,7 +20,7 @@ final class AppState {
     @UserDefault(key: UserDefaultsKey.resistentSkin.rawValue, defaultValue: "") var resistentSkin: String
     @UserDefault(key: UserDefaultsKey.pigmentedSkin.rawValue, defaultValue: "") var pigmentedSkin: String
     @UserDefault(key: UserDefaultsKey.wrinkledSkin.rawValue, defaultValue: "") var wrinkledSkin: String
-    @KeychainToken(key: .authToken) var accessToken: String?
+    @Keychain(key: .authToken) var accessToken: String?
     
     func logout() {
         guard let window = UIApplication.shared.windows.first else {

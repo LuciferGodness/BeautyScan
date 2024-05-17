@@ -52,7 +52,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 500 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pa-5v-5qq">
-                        <rect key="frame" x="22.333333333333329" y="96.333333333333329" width="56" height="19.333333333333329"/>
+                        <rect key="frame" x="25.666666666666671" y="96.333333333333329" width="56" height="19.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <color key="textColor" name="blackAsset"/>
                         <nil key="highlightedColor"/>
@@ -63,8 +63,8 @@
                         <color key="textColor" name="blackAsset"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-o0-NFL">
-                        <rect key="frame" x="15" y="120.33333333333333" width="70.666666666666671" height="14.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-o0-NFL">
+                        <rect key="frame" x="15" y="120.33333333333333" width="77" height="14.333333333333329"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14.333333333333314" id="J5b-ED-zG8"/>
                         </constraints>

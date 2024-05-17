@@ -1,17 +1,17 @@
 //
-//  AppointmentAssembler.swift
+//  DoctorsAssembler.swift
 //  BeautyScan
 //
-//  Created by Admin on 4/11/24.
+//  Created by Admin on 5/16/24.
 //
 
 import Foundation
 
-enum AppointmentAssembler {
-    static func assemble(id: Int) -> AppointmentVC {
+enum DoctorsAssembler {
+    static func assemble() -> DoctorsVC {
         let apiServices = ApiServices()
-        let view = AppointmentVC()
-        let viewModel = AppointmentVM(id: id)
+        let view = DoctorsVC()
+        let viewModel = DoctorsVM()
         
         view.viewModel = viewModel
         viewModel.view = view

@@ -15,6 +15,9 @@ protocol PApiServices {
     func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO>
     func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO>
     func getQuestions() -> Single<[QuestionsDTO]>
+    func bookAppointment(appointmentId: Int) -> Single<SMSResponseDTO>
+    func getUserAppointments() -> Single<[UserAppointmentsDTO]>
+    func getAllDoctors() -> Single<[DoctorsDTO]>
 }
 
 extension ApiServices: PApiServices {
@@ -31,7 +34,7 @@ extension ApiServices: PApiServices {
     }
     
     func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO> {
-        sendRequest(url: .verifyCode, model: VerifyRequestModel(phoneNumber: phoneNumber, code: code), method: .post, contentType: "application/json")
+        return sendRequest(url: .verifyCode, model: VerifyRequestModel(phoneNumber: phoneNumber, code: code), method: .post, contentType: "application/json")
             .map { (verifyResponseDTO: VerifyResponseDTO) in
                 AppState.current.accessToken = verifyResponseDTO.token
                 return verifyResponseDTO
@@ -44,5 +47,18 @@ extension ApiServices: PApiServices {
     
     func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO> {
         sendRequest(url: .getDoctorInfo(doctorId: doctorId))
+    }
+    
+    func getUserAppointments() -> Single<[UserAppointmentsDTO]> {
+        sendRequest(url: .userAppointments)
+    }
+    
+    func getAllDoctors() -> Single<[DoctorsDTO]> {
+        sendRequest(url: .allDoctors)
+    }
+    
+    //TODO: FIX IT
+    func bookAppointment(appointmentId: Int) -> Single<SMSResponseDTO> {
+        sendRequest(url: .bookAppointment, model: AppointmentInfoDTO(doctorId: 1, appointmentId: appointmentId), method: .post, contentType: "application/json")
     }
 }

@@ -9,6 +9,7 @@
 "homeScreen"                  = "Home";
 "aboutSkinScreen"             = "About Skin";
 "appointment"                 = "Appointment";
+"doctors"                     = "Doctors";
 
 "scan"                        = "Scan Product";
 "learnSkinType"               = "Learn Skin Type";
@@ -51,3 +52,6 @@
 "sensitive"                   = "Частично чувствительная";
 "resistant"                   = "Более-менее резистентная";
 "veryResistant"               = "Очень резистентная";
+
+"myAppointments"              = "Мои записи";
+"doctorsSpecialty"                     = "Специалисты";

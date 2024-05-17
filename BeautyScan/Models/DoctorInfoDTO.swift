@@ -8,7 +8,7 @@
 import Foundation
 
 struct DoctorInfoDTO: Decodable {
-    let id: Int
+    let id: [Int]
     let doctorName: String
     let specialty: String
     let description: String
@@ -33,7 +33,7 @@ struct DoctorInfoDTO: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        id = try values.decode(Int.self, forKey: .id)
+        id = try values.decode([Int].self, forKey: .id)
         doctorName = try values.decode(String.self, forKey: .doctorName)
         specialty = try values.decode(String.self, forKey: .specialty)
         date = try values.decode([String].self, forKey: .date)

@@ -32,6 +32,7 @@ final class AboutSkinVC: BaseVC, PAboutSkinVC {
     }
     
     override func viewDidLoad() {
+        startLoading()
         optionButtons = [optionOne, optionTwo, optionThree, optionFour, optionFive]
         vm?.getQuestions()
         super.viewDidLoad()
@@ -48,6 +49,7 @@ final class AboutSkinVC: BaseVC, PAboutSkinVC {
     }
     
     func displayQuestion(_ question: String, options: [String]) {
+        endLoading()
         questionText.text = question
         for (index, button) in optionButtons.enumerated() {
             if index < options.count {
@@ -68,7 +70,7 @@ final class AboutSkinVC: BaseVC, PAboutSkinVC {
     // MARK: - Navigation
     
     @IBAction func doctorAppointment() {
-        navigationController?.pushViewController(AppointmentAssembler.assemble(), animated: true)
+        navigationController?.pushViewController(DoctorsAssembler.assemble(), animated: true)
     }
     
     func openSideMenu() {

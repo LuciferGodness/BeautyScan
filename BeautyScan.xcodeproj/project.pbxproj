@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		41CEDD6FDF0286AABC82222C /* Pods_BeautyScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801DA810E261DAC4AA34555B /* Pods_BeautyScan.framework */; };
 		754D923BBCF6652C52426AF8 /* Pods_BeautyScanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4FE57487BE85EE391B573B /* Pods_BeautyScanTests.framework */; };
+		84038CE72BE975A900373829 /* AppointmentInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CE62BE975A900373829 /* AppointmentInfoDTO.swift */; };
+		84038CF12BF565C300373829 /* DoctorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CEF2BF565C300373829 /* DoctorsVC.swift */; };
+		84038CF22BF565C300373829 /* DoctorsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84038CF02BF565C300373829 /* DoctorsVC.xib */; };
+		84038CF42BF565D400373829 /* DoctorsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CF32BF565D400373829 /* DoctorsVM.swift */; };
+		84038CF62BF565F200373829 /* DoctorsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CF52BF565F200373829 /* DoctorsAssembler.swift */; };
+		84038CFA2BF6516600373829 /* UserAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CF82BF6516600373829 /* UserAppointmentCell.swift */; };
+		84038CFB2BF6516600373829 /* UserAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84038CF92BF6516600373829 /* UserAppointmentCell.xib */; };
+		84038CFD2BF6584300373829 /* UserAppointmentsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CFC2BF6584300373829 /* UserAppointmentsDTO.swift */; };
+		84038CFF2BF65C9400373829 /* DoctorsSectionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038CFE2BF65C9400373829 /* DoctorsSectionTypes.swift */; };
+		84038D062BF6779A00373829 /* DoctorsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D052BF6779A00373829 /* DoctorsDTO.swift */; };
+		84038D092BF6A69700373829 /* DoctorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D072BF6A69700373829 /* DoctorsCell.swift */; };
+		84038D0A2BF6A69700373829 /* DoctorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84038D082BF6A69700373829 /* DoctorsCell.xib */; };
 		84105BE42B0FD3C700FA7650 /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84105BE22B0FD3C700FA7650 /* ScanVC.swift */; };
 		84105BE52B0FD3C700FA7650 /* ScanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84105BE32B0FD3C700FA7650 /* ScanVC.xib */; };
 		842C9F962AFCE4A500E731D8 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C9F952AFCE4A500E731D8 /* HomeVM.swift */; };
@@ -122,6 +134,18 @@
 		7406F6E8C1D8967A9A3821E5 /* Pods_BeautyScan_BeautyScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyScan_BeautyScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C34225F3BB9DD56F3F1873B /* Pods-BeautyScanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyScanTests.release.xcconfig"; path = "Target Support Files/Pods-BeautyScanTests/Pods-BeautyScanTests.release.xcconfig"; sourceTree = "<group>"; };
 		801DA810E261DAC4AA34555B /* Pods_BeautyScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84038CE62BE975A900373829 /* AppointmentInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentInfoDTO.swift; sourceTree = "<group>"; };
+		84038CEF2BF565C300373829 /* DoctorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsVC.swift; sourceTree = "<group>"; };
+		84038CF02BF565C300373829 /* DoctorsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorsVC.xib; sourceTree = "<group>"; };
+		84038CF32BF565D400373829 /* DoctorsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsVM.swift; sourceTree = "<group>"; };
+		84038CF52BF565F200373829 /* DoctorsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsAssembler.swift; sourceTree = "<group>"; };
+		84038CF82BF6516600373829 /* UserAppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppointmentCell.swift; sourceTree = "<group>"; };
+		84038CF92BF6516600373829 /* UserAppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAppointmentCell.xib; sourceTree = "<group>"; };
+		84038CFC2BF6584300373829 /* UserAppointmentsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppointmentsDTO.swift; sourceTree = "<group>"; };
+		84038CFE2BF65C9400373829 /* DoctorsSectionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsSectionTypes.swift; sourceTree = "<group>"; };
+		84038D052BF6779A00373829 /* DoctorsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsDTO.swift; sourceTree = "<group>"; };
+		84038D072BF6A69700373829 /* DoctorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsCell.swift; sourceTree = "<group>"; };
+		84038D082BF6A69700373829 /* DoctorsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorsCell.xib; sourceTree = "<group>"; };
 		84105BE22B0FD3C700FA7650 /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
 		84105BE32B0FD3C700FA7650 /* ScanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanVC.xib; sourceTree = "<group>"; };
 		842C9F952AFCE4A500E731D8 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -257,6 +281,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84038CEE2BF5659600373829 /* DoctorsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84038CF72BF6513600373829 /* Cells */,
+				84038CEF2BF565C300373829 /* DoctorsVC.swift */,
+				84038CF02BF565C300373829 /* DoctorsVC.xib */,
+				84038CF32BF565D400373829 /* DoctorsVM.swift */,
+				84038CF52BF565F200373829 /* DoctorsAssembler.swift */,
+			);
+			path = DoctorsScreen;
+			sourceTree = "<group>";
+		};
+		84038CF72BF6513600373829 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84038CF82BF6516600373829 /* UserAppointmentCell.swift */,
+				84038CF92BF6516600373829 /* UserAppointmentCell.xib */,
+				84038D072BF6A69700373829 /* DoctorsCell.swift */,
+				84038D082BF6A69700373829 /* DoctorsCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84105BE12B0FD3A800FA7650 /* ScanScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +335,9 @@
 				8495FAC52B55549200CEBD0C /* VerifyResponseDTO.swift */,
 				84DF37D42BCC4D5A0010A868 /* DoctorInfoDTO.swift */,
 				84F78C792BD416FB0002E8E2 /* QuestionsDTO.swift */,
+				84038CE62BE975A900373829 /* AppointmentInfoDTO.swift */,
+				84038CFC2BF6584300373829 /* UserAppointmentsDTO.swift */,
+				84038D052BF6779A00373829 /* DoctorsDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,6 +457,7 @@
 		844FFDC42AEFD7800043DC54 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84038CEE2BF5659600373829 /* DoctorsScreen */,
 				84B99A4A2BC7475A00EF157B /* AppointmentScreen */,
 				8475331C2BA624220051263B /* ScanerScreen */,
 				8495FAD72B5ACAAC00CEBD0C /* AboutSkinScreen */,
@@ -442,6 +493,7 @@
 			children = (
 				846B612E2B9E209500CE7F18 /* SideMenuSectionTypes.swift */,
 				84C339C72BE2B8B9001FEB76 /* SkinTypes.swift */,
+				84038CFE2BF65C9400373829 /* DoctorsSectionTypes.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -733,11 +785,14 @@
 			files = (
 				84B99A572BC74D4100EF157B /* ImageCell.xib in Resources */,
 				8430EDBC2AEFD1C0003DD766 /* LaunchScreen.storyboard in Resources */,
+				84038CFB2BF6516600373829 /* UserAppointmentCell.xib in Resources */,
 				842C9F9E2AFCED3E00E731D8 /* HomeVC.xib in Resources */,
 				8495FADB2B5ACAF300CEBD0C /* AboutSkinVC.xib in Resources */,
 				8430EDB92AEFD1C0003DD766 /* Assets.xcassets in Resources */,
+				84038D0A2BF6A69700373829 /* DoctorsCell.xib in Resources */,
 				8481CF332B74F9CD00B2BC15 /* ProfileCell.xib in Resources */,
 				84DBD06A2BC0304B001B50F2 /* ScannerView.xib in Resources */,
+				84038CF22BF565C300373829 /* DoctorsVC.xib in Resources */,
 				8475331F2BA624540051263B /* ScanerVC.xib in Resources */,
 				8495FAD42B5982B200CEBD0C /* SideMenuVC.xib in Resources */,
 				849523592B08E286004B4779 /* HomeTableCell.xib in Resources */,
@@ -892,16 +947,19 @@
 				8456879B2B2DE11600B52B9B /* RegistrationVM.swift in Sources */,
 				849523542B08E076004B4779 /* UITableView + Extension.swift in Sources */,
 				842C9F9D2AFCED3E00E731D8 /* HomeVC.swift in Sources */,
+				84038CFD2BF6584300373829 /* UserAppointmentsDTO.swift in Sources */,
 				8495235F2B0E5A9B004B4779 /* AppAssets.swift in Sources */,
 				8495FADD2B5ACB3700CEBD0C /* AboutSkinVM.swift in Sources */,
 				8495FAD62B59830B00CEBD0C /* SideMenuAssembler.swift in Sources */,
 				84C162622BAC52430011A7E0 /* Keychain.swift in Sources */,
 				84C339C62BE29E3A001FEB76 /* Constants.swift in Sources */,
+				84038D062BF6779A00373829 /* DoctorsDTO.swift in Sources */,
 				8495FAC92B56AAAD00CEBD0C /* ApiWrapper.swift in Sources */,
 				84C339C82BE2B8B9001FEB76 /* SkinTypes.swift in Sources */,
 				842C9F982AFCE4BB00E731D8 /* HomeAssembler.swift in Sources */,
 				84105BE42B0FD3C700FA7650 /* ScanVC.swift in Sources */,
 				846B612F2B9E209500CE7F18 /* SideMenuSectionTypes.swift in Sources */,
+				84038CFA2BF6516600373829 /* UserAppointmentCell.swift in Sources */,
 				847533202BA624540051263B /* ScanerVC.swift in Sources */,
 				845687A42B2E499D00B52B9B /* SMSResponseDTO.swift in Sources */,
 				842C9F962AFCE4A500E731D8 /* HomeVM.swift in Sources */,
@@ -917,13 +975,18 @@
 				84DBD0722BC180B4001B50F2 /* String+Extension.swift in Sources */,
 				84F78C7A2BD416FB0002E8E2 /* QuestionsDTO.swift in Sources */,
 				8456879F2B2DEEC500B52B9B /* SMSRequestModel.swift in Sources */,
+				84038CF42BF565D400373829 /* DoctorsVM.swift in Sources */,
 				849523582B08E286004B4779 /* HomeTableCell.swift in Sources */,
 				84B99A562BC74D4100EF157B /* ImageCell.swift in Sources */,
+				84038CE72BE975A900373829 /* AppointmentInfoDTO.swift in Sources */,
 				846C323D2BB0900100E830A6 /* ScanerVM.swift in Sources */,
 				842CA1EC2AFE440100E731D8 /* ApiService + Endpoints.swift in Sources */,
+				84038CF62BF565F200373829 /* DoctorsAssembler.swift in Sources */,
 				847533222BA624670051263B /* ScanerAssembler.swift in Sources */,
+				84038CF12BF565C300373829 /* DoctorsVC.swift in Sources */,
 				84832AA12B2C96EE004E552D /* AppColors.swift in Sources */,
 				847FAA082B1CF7ED00B9BAA8 /* ScanAssembler.swift in Sources */,
+				84038D092BF6A69700373829 /* DoctorsCell.swift in Sources */,
 				84B99A5A2BC74DF200EF157B /* DoctorMainInfoCell.swift in Sources */,
 				845687A22B2E452D00B52B9B /* PFormEncoding.swift in Sources */,
 				84DBD0682BC0301E001B50F2 /* ScannerView.swift in Sources */,
@@ -934,6 +997,7 @@
 				845687982B2DDFE800B52B9B /* RegistrationVC.swift in Sources */,
 				84DF37CF2BCB2BF60010A868 /* CalendarView.swift in Sources */,
 				8481CF322B74F9CD00B2BC15 /* ProfileCell.swift in Sources */,
+				84038CFF2BF65C9400373829 /* DoctorsSectionTypes.swift in Sources */,
 				84D5C2692B80E5F7003F639F /* UserDefault.swift in Sources */,
 				84D5C2672B80DD77003F639F /* AppState.swift in Sources */,
 				8495FADA2B5ACAF300CEBD0C /* AboutSkinVC.swift in Sources */,

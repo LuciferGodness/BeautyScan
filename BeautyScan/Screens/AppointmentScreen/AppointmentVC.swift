@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol PAppointmentVC: PBaseVC {
     func reloadTable()
+    func returnOnPreviousScreen()
 }
 
 final class AppointmentVC: BaseVC, PAppointmentVC {
@@ -41,6 +42,10 @@ final class AppointmentVC: BaseVC, PAppointmentVC {
     
     func reloadTable() {
         tableView.reloadData()
+    }
+    
+    func returnOnPreviousScreen() {
+        navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Navigation
@@ -116,7 +121,10 @@ extension AppointmentVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.selectedDate = .now
-        cell.setup(date: viewModel?.model?.date ?? [])
+        cell.setup(date: (viewModel?.model?.date ?? [], viewModel?.model?.id ?? []), isAvailable: viewModel?.model?.available ?? [])
+        cell.buttonAction = { appoinmentId in
+            self.viewModel?.bookAppointment(appointmentId: appoinmentId)
+        }
         return cell
     }
     
@@ -133,7 +141,10 @@ extension AppointmentVC {
     func didSelectDate(_ date: Date) {
         if let bookTimeCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? BookTimeCell {
             bookTimeCell.selectedDate = date
-            bookTimeCell.setup(date: viewModel?.model?.date ?? [])
+            bookTimeCell.setup(date: (viewModel?.model?.date ?? [], viewModel?.model?.id ?? []), isAvailable: viewModel?.model?.available ?? [])
+            bookTimeCell.buttonAction = { appoinmentId in
+                self.viewModel?.bookAppointment(appointmentId: appoinmentId)
+            }
         }
     }
 }

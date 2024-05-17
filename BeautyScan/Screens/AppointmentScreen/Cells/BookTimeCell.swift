@@ -14,10 +14,12 @@ enum LabelState {
 
 final class BookTimeCell: UITableViewCell {
     var selectedDate: Date?
+    private var selectedTime: Int?
     private var verticalStackView: UIStackView!
     private var labels = [(label: UILabel, state: LabelState)]()
+    var buttonAction: ((Int) -> Void)?
     
-    func setup(date: [String]) {
+    func setup(date: ([String], [Int]), isAvailable: [Int]) {
         guard let selectedDate = selectedDate else { return }
         
         if verticalStackView != nil {
@@ -26,7 +28,7 @@ final class BookTimeCell: UITableViewCell {
         
         createVerticalStackView()
 
-        dateFormat(selectedDate: selectedDate, date: date)
+        dateFormat(selectedDate: selectedDate, date: date, isAvailable: isAvailable)
         
         if !labels.isEmpty {
             let horizontalStackView = createHorizontalStackView(with: labels.map { $0.label })
@@ -34,22 +36,21 @@ final class BookTimeCell: UITableViewCell {
         }
     }
     
-    private func dateFormat(selectedDate: Date, date: [String]) {
-        for dateString in date {
+    private func dateFormat(selectedDate: Date, date: ([String], [Int]), isAvailable: [Int]) {
+        for (index, dateString) in date.0.enumerated() {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
             let outputFormatter = DateFormatter()
             outputFormatter.dateFormat = "MMM dd, yyyy"
-            outputFormatter.timeZone = TimeZone(identifier: "Russia/Moscow")
             let currentDay = outputFormatter.string(from: selectedDate)
             
             if let timeDate = dateFormatter.date(from: dateString),
                outputFormatter.string(from: timeDate) == currentDay {
                 
                 let timeString = formatTimeString(from: timeDate)
-                let label = createLabel(with: timeString)
-                label.tag = labels.count
-                labels.append((label: label, state: .deselected))
+                let available: LabelState = isAvailable[index] == 0 ? .selected : .deselected
+                let label = createLabel(with: timeString, tag: date.1[index], available: available)
+                labels.append((label: label, state: available))
                 
             }
         }
@@ -89,7 +90,7 @@ final class BookTimeCell: UITableViewCell {
     
     @objc private func labelTapped(_ sender: UITapGestureRecognizer) {
         guard let selectedLabel = sender.view as? UILabel else { return }
-        let selectedTime = selectedLabel.text ?? ""
+        selectedTime = selectedLabel.tag
         
         if let index = labels.firstIndex(where: { $0.label == selectedLabel }) {
             switch labels[index].state {
@@ -110,9 +111,10 @@ final class BookTimeCell: UITableViewCell {
         }
     }
     
-    private func createLabel(with text: String) -> UILabel {
+    private func createLabel(with text: String, tag: Int, available: LabelState) -> UILabel {
         let label = UILabel()
         label.text = text
+        label.tag = tag
         label.textAlignment = .center
         label.backgroundColor = AppColors.textFieldBackground.color
         label.layer.cornerRadius = DesignConstants.cornerRadius
@@ -121,9 +123,18 @@ final class BookTimeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
-        label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(tapGesture)
+        if available == .selected {
+            label.isUserInteractionEnabled = false
+            label.isEnabled = false
+        } else {
+            label.isUserInteractionEnabled = true
+            label.addGestureRecognizer(tapGesture)
+        }
         return label
+    }
+    
+    @IBAction private func bookTime() {
+        buttonAction?(selectedTime ?? 0)
     }
     
     private func createHorizontalStackView(with labels: [UILabel]) -> UIStackView {
