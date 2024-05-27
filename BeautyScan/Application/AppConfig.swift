@@ -13,7 +13,7 @@ enum AppConfig {
     }
     
     static var ngrokDomain: String {
-        "https://2f4f-91-197-3-158.ngrok-free.app"
+        "https://7c42-91-197-3-158.ngrok-free.app"
     }
     
     static var googleDomain: String {
@@ -22,10 +22,6 @@ enum AppConfig {
     
     static var verifyCodeUrl: String {
         "\(ngrokDomain)/verify"
-    }
-    
-    static var searchUsersProduct: String {
-        "https://makeup-api.herokuapp.com/api/v1/products.json?brand="
     }
     
     static var registrationCodeUrl: String {

@@ -133,6 +133,26 @@ final class MockApiService: PApiServices {
         return createMockSingle(mockedData: doctorDTO)
     }
     
+    func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO> {
+        <#code#>
+    }
+    
+    func getQuestions() -> Single<[QuestionsDTO]> {
+        <#code#>
+    }
+    
+    func bookAppointment(appointmentId: Int) -> Single<SMSResponseDTO> {
+        <#code#>
+    }
+    
+    func getUserAppointments() -> Single<[UserAppointmentsDTO]> {
+        <#code#>
+    }
+    
+    func getAllDoctors() -> Single<[DoctorsDTO]> {
+        <#code#>
+    }
+    
     private func createMockSingle<T>(mockedData: T) -> Single<T> {
         return Single.just(mockedData)
     }

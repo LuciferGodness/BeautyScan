@@ -26,7 +26,7 @@ extension ApiServices: PApiServices {
     }
     
     func searchProduct(producrName: String) -> Single<SearchProductDTO> {
-        sendRequest(url: .searchProduct(productName: producrName))
+        sendRequest(url: .searchProduct(productName: producrName), addToken: false)
     }
     
     func getCodeForLogin(phone: String?) -> Single<SMSResponseDTO> {
@@ -57,8 +57,7 @@ extension ApiServices: PApiServices {
         sendRequest(url: .allDoctors)
     }
     
-    //TODO: FIX IT
     func bookAppointment(appointmentId: Int) -> Single<SMSResponseDTO> {
-        sendRequest(url: .bookAppointment, model: AppointmentInfoDTO(doctorId: 1, appointmentId: appointmentId), method: .post, contentType: "application/json")
+        sendRequest(url: .bookAppointment, model: AppointmentInfoDTO(appointmentId: appointmentId), method: .post, contentType: "application/json")
     }
 }

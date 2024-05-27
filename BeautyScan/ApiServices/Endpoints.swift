@@ -10,7 +10,6 @@ import Foundation
 enum Endpoints {
     case homeURL
     case searchProduct(productName: String)
-    case searchUsersProduct(productName: String)
     case registrationCode
     case verifyCode
     case getDoctorInfo(doctorId: Int)
@@ -29,8 +28,6 @@ enum Endpoints {
             return "\(AppConfig.googleDomain)\(productName)"
         case .verifyCode:
             return AppConfig.verifyCodeUrl
-        case let .searchUsersProduct(productName: productName):
-            return "\(AppConfig.searchUsersProduct)\(productName)"
         case let .getDoctorInfo(doctorId: doctorId):
             return "\(AppConfig.ngrokDomain)/doctors/\(doctorId)/appointments"
         case .questions:

@@ -41,12 +41,12 @@ enum ApiError: Error {
 
 
 final class ApiServices {
-    func sendRequest<Response: Decodable>(url: Endpoints, method: HTTPMethod = .get) -> Single<Response> {
+    func sendRequest<Response: Decodable>(url: Endpoints, method: HTTPMethod = .get, addToken: Bool = true) -> Single<Response> {
         guard let url = URL(string: url.string) else {
             return Single.error(ApiError.invalidURL)
         }
         var urlRequest = URLRequest(url: url)
-        if let token = AppState.current.accessToken {
+        if let token = AppState.current.accessToken, addToken {
             addAuthorizationHeader(to: &urlRequest)
         }
         urlRequest.httpMethod = method.rawValue
@@ -87,7 +87,8 @@ final class ApiServices {
                     observer.onError(error)
                     return
                 }
-                _ = String(data: data ?? Data(), encoding: .utf8) ?? ""
+                let body = String(data: data ?? Data(), encoding: .utf8) ?? ""
+                print(body)
                 guard let data = data else {
                     observer.onError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"]))
                     return

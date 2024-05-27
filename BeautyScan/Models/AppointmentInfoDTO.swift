@@ -8,12 +8,10 @@
 import Foundation
 
 struct AppointmentInfoDTO: PFormEncoding {
-    let doctorId: Int
     let appointmentId: Int
     
     func toFormData() -> [String: Any] {
         return [
-            "doctorId": doctorId,
             "appointmentId": appointmentId,
         ]
     }
