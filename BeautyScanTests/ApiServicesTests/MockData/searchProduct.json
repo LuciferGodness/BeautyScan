@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "title": "Product 1",
+      "link": "https://example.com/product1",
+      "displayLink": "example.com",
+      "formattedUrl": "https://example.com/product1"
+    },
+    {
+      "title": "Product 2",
+      "link": "https://example.com/product2",
+      "displayLink": "example.com",
+      "formattedUrl": "https://example.com/product2"
+    }
+  ],
+  "queries": {
+    "request": [
+      {
+        "searchTerms": "search term 1"
+      },
+      {
+        "searchTerms": "search term 2"
+      }
+    ]
+  }
+}
+

@@ -21,6 +21,23 @@
 		84038D062BF6779A00373829 /* DoctorsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D052BF6779A00373829 /* DoctorsDTO.swift */; };
 		84038D092BF6A69700373829 /* DoctorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D072BF6A69700373829 /* DoctorsCell.swift */; };
 		84038D0A2BF6A69700373829 /* DoctorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84038D082BF6A69700373829 /* DoctorsCell.xib */; };
+		84038D0C2C060D3600373829 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D0B2C060D3600373829 /* MockRepository.swift */; };
+		84038D112C06100A00373829 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D102C060FF700373829 /* home.json */; };
+		84038D132C061BB800373829 /* searchProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D122C061BB800373829 /* searchProduct.json */; };
+		84038D162C061CC700373829 /* MockedRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D152C061CC700373829 /* MockedRegistrationView.swift */; };
+		84038D182C061D4F00373829 /* RegistrationVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D172C061D4F00373829 /* RegistrationVMTest.swift */; };
+		84038D1C2C06239100373829 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D1B2C06239100373829 /* message.json */; };
+		84038D1E2C06253B00373829 /* verifyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D1D2C06253B00373829 /* verifyResponse.json */; };
+		84038D212C06277600373829 /* MockedAboutSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D202C06277600373829 /* MockedAboutSkinView.swift */; };
+		84038D232C062E7800373829 /* AboutSkinVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D222C062E7800373829 /* AboutSkinVMTest.swift */; };
+		84038D252C06305E00373829 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D242C06305E00373829 /* questions.json */; };
+		84038D282C0631A700373829 /* MockedAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D272C0631A700373829 /* MockedAppointmentView.swift */; };
+		84038D2A2C06323500373829 /* AppointmentVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D292C06323500373829 /* AppointmentVMTest.swift */; };
+		84038D2F2C0638F400373829 /* doctorInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D2E2C0638F400373829 /* doctorInfo.json */; };
+		84038D322C0649AD00373829 /* MockedDoctorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D312C0649AD00373829 /* MockedDoctorsView.swift */; };
+		84038D342C064A2700373829 /* DoctorsVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84038D332C064A2700373829 /* DoctorsVMTest.swift */; };
+		84038D362C064C8100373829 /* userAppointments.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D352C064C8100373829 /* userAppointments.json */; };
+		84038D382C064D0D00373829 /* doctors.json in Resources */ = {isa = PBXBuildFile; fileRef = 84038D372C064D0D00373829 /* doctors.json */; };
 		84105BE42B0FD3C700FA7650 /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84105BE22B0FD3C700FA7650 /* ScanVC.swift */; };
 		84105BE52B0FD3C700FA7650 /* ScanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84105BE32B0FD3C700FA7650 /* ScanVC.xib */; };
 		842C9F962AFCE4A500E731D8 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C9F952AFCE4A500E731D8 /* HomeVM.swift */; };
@@ -146,6 +163,23 @@
 		84038D052BF6779A00373829 /* DoctorsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsDTO.swift; sourceTree = "<group>"; };
 		84038D072BF6A69700373829 /* DoctorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsCell.swift; sourceTree = "<group>"; };
 		84038D082BF6A69700373829 /* DoctorsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorsCell.xib; sourceTree = "<group>"; };
+		84038D0B2C060D3600373829 /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
+		84038D102C060FF700373829 /* home.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = home.json; sourceTree = "<group>"; };
+		84038D122C061BB800373829 /* searchProduct.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchProduct.json; sourceTree = "<group>"; };
+		84038D152C061CC700373829 /* MockedRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRegistrationView.swift; sourceTree = "<group>"; };
+		84038D172C061D4F00373829 /* RegistrationVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVMTest.swift; sourceTree = "<group>"; };
+		84038D1B2C06239100373829 /* message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
+		84038D1D2C06253B00373829 /* verifyResponse.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = verifyResponse.json; sourceTree = "<group>"; };
+		84038D202C06277600373829 /* MockedAboutSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedAboutSkinView.swift; sourceTree = "<group>"; };
+		84038D222C062E7800373829 /* AboutSkinVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSkinVMTest.swift; sourceTree = "<group>"; };
+		84038D242C06305E00373829 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		84038D272C0631A700373829 /* MockedAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedAppointmentView.swift; sourceTree = "<group>"; };
+		84038D292C06323500373829 /* AppointmentVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppointmentVMTest.swift; path = BeautyScanTests/AppointmentTests/AppointmentVMTest.swift; sourceTree = SOURCE_ROOT; };
+		84038D2E2C0638F400373829 /* doctorInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctorInfo.json; sourceTree = "<group>"; };
+		84038D312C0649AD00373829 /* MockedDoctorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDoctorsView.swift; sourceTree = "<group>"; };
+		84038D332C064A2700373829 /* DoctorsVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoctorsVMTest.swift; path = BeautyScanTests/DoctorsTests/DoctorsVMTest.swift; sourceTree = SOURCE_ROOT; };
+		84038D352C064C8100373829 /* userAppointments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userAppointments.json; sourceTree = "<group>"; };
+		84038D372C064D0D00373829 /* doctors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = doctors.json; sourceTree = "<group>"; };
 		84105BE22B0FD3C700FA7650 /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
 		84105BE32B0FD3C700FA7650 /* ScanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanVC.xib; sourceTree = "<group>"; };
 		842C9F952AFCE4A500E731D8 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -304,6 +338,57 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		84038D0D2C060D5600373829 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				84038D102C060FF700373829 /* home.json */,
+				84038D122C061BB800373829 /* searchProduct.json */,
+				84038D1B2C06239100373829 /* message.json */,
+				84038D1D2C06253B00373829 /* verifyResponse.json */,
+				84038D242C06305E00373829 /* questions.json */,
+				84038D2E2C0638F400373829 /* doctorInfo.json */,
+				84038D352C064C8100373829 /* userAppointments.json */,
+				84038D372C064D0D00373829 /* doctors.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		84038D142C061C9300373829 /* RegistrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				84038D172C061D4F00373829 /* RegistrationVMTest.swift */,
+				84038D152C061CC700373829 /* MockedRegistrationView.swift */,
+			);
+			path = RegistrationTests;
+			sourceTree = "<group>";
+		};
+		84038D1F2C06260300373829 /* AboutSkinTests */ = {
+			isa = PBXGroup;
+			children = (
+				84038D222C062E7800373829 /* AboutSkinVMTest.swift */,
+				84038D202C06277600373829 /* MockedAboutSkinView.swift */,
+			);
+			path = AboutSkinTests;
+			sourceTree = "<group>";
+		};
+		84038D262C06317900373829 /* AppointmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				84038D292C06323500373829 /* AppointmentVMTest.swift */,
+				84038D272C0631A700373829 /* MockedAppointmentView.swift */,
+			);
+			path = AppointmentTests;
+			sourceTree = "<group>";
+		};
+		84038D302C06496400373829 /* DoctorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				84038D332C064A2700373829 /* DoctorsVMTest.swift */,
+				84038D312C0649AD00373829 /* MockedDoctorsView.swift */,
+			);
+			path = DoctorsTests;
+			sourceTree = "<group>";
+		};
 		84105BE12B0FD3A800FA7650 /* ScanScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,7 +473,9 @@
 		842D71F82BDACB0400D21E56 /* ApiServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				84038D0D2C060D5600373829 /* MockData */,
 				842D71F92BDACB3800D21E56 /* MockApiService.swift */,
+				84038D0B2C060D3600373829 /* MockRepository.swift */,
 			);
 			path = ApiServicesTests;
 			sourceTree = "<group>";
@@ -440,6 +527,10 @@
 			children = (
 				842D71F82BDACB0400D21E56 /* ApiServicesTests */,
 				842D71F32BDAB17F00D21E56 /* HomeTests */,
+				84038D142C061C9300373829 /* RegistrationTests */,
+				84038D1F2C06260300373829 /* AboutSkinTests */,
+				84038D262C06317900373829 /* AppointmentTests */,
+				84038D302C06496400373829 /* DoctorsTests */,
 				8430EDC62AEFD1C0003DD766 /* BeautyScanTests.swift */,
 			);
 			path = BeautyScanTests;
@@ -813,6 +904,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84038D382C064D0D00373829 /* doctors.json in Resources */,
+				84038D112C06100A00373829 /* home.json in Resources */,
+				84038D1E2C06253B00373829 /* verifyResponse.json in Resources */,
+				84038D2F2C0638F400373829 /* doctorInfo.json in Resources */,
+				84038D132C061BB800373829 /* searchProduct.json in Resources */,
+				84038D362C064C8100373829 /* userAppointments.json in Resources */,
+				84038D252C06305E00373829 /* questions.json in Resources */,
+				84038D1C2C06239100373829 /* message.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,8 +1108,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84038D2A2C06323500373829 /* AppointmentVMTest.swift in Sources */,
+				84038D282C0631A700373829 /* MockedAppointmentView.swift in Sources */,
+				84038D322C0649AD00373829 /* MockedDoctorsView.swift in Sources */,
+				84038D162C061CC700373829 /* MockedRegistrationView.swift in Sources */,
+				84038D182C061D4F00373829 /* RegistrationVMTest.swift in Sources */,
+				84038D232C062E7800373829 /* AboutSkinVMTest.swift in Sources */,
+				84038D212C06277600373829 /* MockedAboutSkinView.swift in Sources */,
 				842D71FA2BDACB3800D21E56 /* MockApiService.swift in Sources */,
 				8430EDC72AEFD1C0003DD766 /* BeautyScanTests.swift in Sources */,
+				84038D342C064A2700373829 /* DoctorsVMTest.swift in Sources */,
+				84038D0C2C060D3600373829 /* MockRepository.swift in Sources */,
 				842D71F72BDAB20D00D21E56 /* MockedHomeView.swift in Sources */,
 				842D71F52BDAB1BF00D21E56 /* HomeVMTest.swift in Sources */,
 			);
@@ -1261,10 +1369,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3H72Q6Y52U;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thrive.BeautyScanTests;
+				PRODUCT_BUNDLE_IDENTIFIER = amos.BeautyScanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1281,10 +1390,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3H72Q6Y52U;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thrive.BeautyScanTests;
+				PRODUCT_BUNDLE_IDENTIFIER = amos.BeautyScanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;

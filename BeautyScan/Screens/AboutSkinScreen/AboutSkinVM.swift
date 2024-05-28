@@ -23,7 +23,7 @@ protocol PAboutSkinVM {
 }
 
 final class AboutSkinVM: PAboutSkinVM {
-    var apiService: ApiServices?
+    var apiService: PApiServices?
     weak var view: PAboutSkinVC?
     private let disposeBag = DisposeBag()
     private var skinTypeScore: Double = 0

@@ -34,3 +34,18 @@ final class BeautyScanTests: XCTestCase {
     }
 
 }
+
+extension XCTestCase {    
+    public func wait(for timeInterval: TimeInterval = 0.05) {
+        let expectetion = self.expectation(description: "waiting")
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
+            expectetion.fulfill()
+        }
+        waitForExpectations(timeout: timeInterval + 5.0)
+    }
+    
+    open override func tearDown() {
+        super.tearDown()
+        wait()
+    }
+}

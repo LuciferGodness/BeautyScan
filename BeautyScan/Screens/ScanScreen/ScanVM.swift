@@ -57,7 +57,6 @@ final class ScanVM: PScanVM {
     }
     
    func sendOpenAIRequest(_ requestChat: String) {
-       print(requestChat)
         let chatArr = [ChatMessage(role: .user, content: requestChat)]
         self.client?.sendChat(with: chatArr,
                               temperature: 0.1,
@@ -68,7 +67,6 @@ final class ScanVM: PScanVM {
                 case .success(let model):
                     self.view?.setText(text: model.choices?.first?.message.content)
                 case .failure(let error):
-                    print(error)
                     self.handleRecognitionError(error)
                     self.view?.endLoading()
                 }

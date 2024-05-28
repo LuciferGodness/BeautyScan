@@ -37,6 +37,8 @@ enum HTTPMethod: String {
 enum ApiError: Error {
     case invalidURL
     case noDataReceived
+    case responseError
+    case unautorized
 }
 
 

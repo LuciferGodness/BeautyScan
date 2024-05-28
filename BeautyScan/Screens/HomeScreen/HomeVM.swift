@@ -15,7 +15,7 @@ protocol PHomeVM {
 }
 
 final class HomeVM: PHomeVM {
-    var apiService: ApiServices?
+    var apiService: PApiServices?
     weak var view: PHomeVC?
     private let disposeBag = DisposeBag()
     var model: HomeDTO?

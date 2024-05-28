@@ -10,32 +10,39 @@ import XCTest
 
 final class HomeVMTest: XCTestCase {
     let mockView = MockedHomeView()
-    var vm = HomeVM()
+    var vm: HomeVM!
+    var apiService: PApiServices!
     
-    override func setUpWithError() throws {
+    override func setUp() {
+        super.setUp()
         vm = HomeVM()
         vm.view = mockView
+        apiService = MockApiService()
+        vm.apiService = apiService
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         mockView.resetMockStates()
+        MockApiService.reset()
+        super.tearDown()
     }
     
-    func testLoadData() {
-        let apiService = FakeApiService(httpClient: ApiServices())
-        
+    func testLoadProductsDataSuccess() {
         vm.getData()
-        XCTAssertNotNil(apiService.getData())
+        XCTAssertTrue(MockApiService.isCalled[.getDataForHome]!)
+        XCTAssertTrue(MockApiService.isCalled[.searchProduct]!)
+        viewFuncCalled(funcType: .reloadView)
     }
     
-    func testMockData() {
-        let httpClient = MockApiService()
-        let apiService = FakeApiService(httpClient: httpClient)
+    func testLoadProductsDataFail() {
+        MockApiService.responseError = true
         vm.getData()
-        apiService.getData()
         
         XCTAssertTrue(MockApiService.isCalled[.getDataForHome]!)
-        mockView.reloadView()
-        XCTAssertTrue(mockView.isCalled[.reloadView]!)
+        viewFuncCalled(funcType: .showAlert)
+    }
+    
+    func viewFuncCalled(funcType: HomeViewFuncCalled) {
+        XCTAssertTrue(mockView.isCalled[funcType] ?? false, "viewFuncCalled failed for \(funcType.rawValue)")
     }
 }

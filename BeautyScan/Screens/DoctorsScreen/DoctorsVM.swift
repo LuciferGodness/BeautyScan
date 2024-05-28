@@ -15,7 +15,7 @@ protocol PDoctorsVM {
 }
 
 final class DoctorsVM: PDoctorsVM {
-    var apiService: ApiServices?
+    var apiService: PApiServices?
     private let disposeBag = DisposeBag()
     weak var view: PDoctorsVC?
     var appointmentModel: [UserAppointmentsDTO] = []
@@ -29,7 +29,9 @@ final class DoctorsVM: PDoctorsVM {
                 self.doctorsModel = doctors
                 self.view?.reloadTable()
             }, onFailure: { error in
-                print(error)
+                self.view?.showAlert(message: error.localizedDescription, nil,
+                                     title: LocalizationKeys.error.localized(),
+                                     okTitle: LocalizationKeys.ok.localized())
             }).disposed(by: disposeBag)
     }
 }

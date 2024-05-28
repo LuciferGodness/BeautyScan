@@ -14,94 +14,25 @@ enum MockApiServiceFunc {
     case searchProduct
     case getCodeForLogin
     case getDoctorInfo
-}
-
-struct FakeApiService {
-    let httpClient: PApiServices
-    
-    func getData() -> Single<HomeDTO> {
-        return httpClient.getDataForHome()
-    }
+    case verifyCode
+    case getQuestions
+    case bookAppointment
+    case getUserAppointments
+    case getAllDoctors
 }
 
 final class MockApiService: PApiServices {
     static var isCalled: [MockApiServiceFunc: Bool] = [:]
+    static var unautorized = false
+    static var responseError = false
+    
+    let repository = MocksRepository()
     
     static func reset() {
         isCalled = [:]
+        unautorized = false
+        responseError = false
     }
-    
-    let jsonData = """
-    {
-      "status": "success",
-      "hits": [
-        {
-          "NAME": "Product 1",
-          "ARTICLE": "123456",
-          "BRAND": {
-            "ID": 1,
-            "CODE": "BRD1",
-            "NAME": "Brand A"
-          },
-          "COVER": {
-            "SRC": "https://example.com/image1.jpg",
-            "SRC_M": "https://example.com/image1_m.jpg",
-            "SRC_S": "https://example.com/image1_s.jpg"
-          },
-          "PRICE": {
-            "CURRENT": 50,
-            "RETAIL": 60,
-            "PROFESSIONAL": 45,
-            "OLD": 70
-          },
-          "VOTES": {
-            "REVIEWS": 10,
-            "RATING": 4.5,
-            "RATING_COUNT": 20,
-            "TEXT": "Great product!"
-          },
-          "FLAG_SHOW_PRICE": true,
-          "FLAG_CAN_BUY": true,
-          "FLAG_SUPPLIER_NO_ORDER": false
-        }
-      ]
-    }
-    """.data(using: .utf8)!
-    
-    let searchProduct = """
-    {
-      "items": [
-        {
-          "title": "Product 1",
-          "link": "https://example.com/product1",
-          "displayLink": "example.com",
-          "formattedUrl": "https://example.com/product1"
-        },
-        {
-          "title": "Product 2",
-          "link": "https://example.com/product2",
-          "displayLink": "example.com",
-          "formattedUrl": "https://example.com/product2"
-        }
-      ],
-      "queries": {
-        "request": [
-          {
-            "searchTerms": "search term 1"
-          },
-          {
-            "searchTerms": "search term 2"
-          }
-        ]
-      }
-    }
-    """.data(using: .utf8)!
-    
-    let message = """
-    {
-      "message": "Your verification code is: 123456"
-    }
-    """.data(using: .utf8)!
     
     let doctor = """
     {
@@ -111,46 +42,76 @@ final class MockApiService: PApiServices {
     
     func getDataForHome() -> Single<HomeDTO> {
         MockApiService.isCalled[.getDataForHome] = true
-        let homeDTO = try! JSONDecoder().decode(HomeDTO.self, from: jsonData)
-        return createMockSingle(mockedData: homeDTO)
+        let homeDTO = repository.homeDTO
+        if MockApiService.responseError {
+            return Single.error(ApiError.responseError)
+        } else {
+            return createMockSingle(mockedData: homeDTO)
+        }
     }
     
     func searchProduct(producrName: String) -> Single<SearchProductDTO> {
         MockApiService.isCalled[.searchProduct] = true
-        let searchDTO = try! JSONDecoder().decode(SearchProductDTO.self, from: searchProduct)
+        let searchDTO = repository.searchProductDTO
         return createMockSingle(mockedData: searchDTO)
     }
     
     func getCodeForLogin(phone: String?) -> Single<SMSResponseDTO> {
         MockApiService.isCalled[.getCodeForLogin] = true
-        let messageDTO = try! JSONDecoder().decode(SMSResponseDTO.self, from: message)
-        return createMockSingle(mockedData: messageDTO)
+        let messageDTO = repository.smsResponseDTO
+        if MockApiService.responseError {
+            return Single.error(ApiError.responseError)
+        } else {
+            return createMockSingle(mockedData: messageDTO)
+        }
+    }
+    
+    func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO> {
+        MockApiService.isCalled[.verifyCode] = true
+        let verifyDTO = repository.verifyResponseDTO
+        if MockApiService.responseError {
+            return Single.error(ApiError.responseError)
+        } else {
+            return createMockSingle(mockedData: verifyDTO)
+        }
+    }
+    
+    func getQuestions() -> Single<[QuestionsDTO]> {
+        MockApiService.isCalled[.getQuestions] = true
+        let questionsDTO = repository.questionsDTO
+        return createMockSingle(mockedData: questionsDTO)
     }
     
     func getDoctorInfo(doctorId: Int) -> Single<DoctorInfoDTO> {
         MockApiService.isCalled[.getDoctorInfo] = true
-        let doctorDTO = try! JSONDecoder().decode(DoctorInfoDTO.self, from: doctor)
-        return createMockSingle(mockedData: doctorDTO)
-    }
-    
-    func verifyLoginCode(phoneNumber: String, code: String) -> Single<VerifyResponseDTO> {
-        <#code#>
-    }
-    
-    func getQuestions() -> Single<[QuestionsDTO]> {
-        <#code#>
+        let doctorInfoDTO = repository.doctorInfoDTO
+        return createMockSingle(mockedData: doctorInfoDTO)
     }
     
     func bookAppointment(appointmentId: Int) -> Single<SMSResponseDTO> {
-        <#code#>
+        MockApiService.isCalled[.bookAppointment] = true
+        let messageDTO = repository.smsResponseDTO
+        return createMockSingle(mockedData: messageDTO)
     }
     
     func getUserAppointments() -> Single<[UserAppointmentsDTO]> {
-        <#code#>
+        MockApiService.isCalled[.getUserAppointments] = true
+        let userAppointmentsDTO = repository.userAppointmentsDTO
+        if MockApiService.unautorized {
+            return Single.error(ApiError.unautorized)
+        } else {
+            return createMockSingle(mockedData: userAppointmentsDTO)
+        }
     }
     
     func getAllDoctors() -> Single<[DoctorsDTO]> {
-        <#code#>
+        MockApiService.isCalled[.getAllDoctors] = true
+        let allDoctors = repository.doctorsDTO
+        if MockApiService.unautorized {
+            return Single.error(ApiError.unautorized)
+        } else {
+            return createMockSingle(mockedData: allDoctors)
+        }
     }
     
     private func createMockSingle<T>(mockedData: T) -> Single<T> {

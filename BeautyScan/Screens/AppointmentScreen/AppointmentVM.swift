@@ -15,7 +15,7 @@ protocol PAppointmentVM {
 }
 
 final class AppointmentVM: PAppointmentVM {
-    var apiService: ApiServices?
+    var apiService: PApiServices?
     private let disposeBag = DisposeBag()
     weak var view: PAppointmentVC?
     var model: DoctorInfoDTO?

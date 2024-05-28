@@ -14,7 +14,7 @@ protocol PRegistrationVM {
 }
 
 final class RegistrationVM: PRegistrationVM {
-    var apiService: ApiServices?
+    var apiService: PApiServices?
     weak var view: PRegistrationVC?
     private let disposeBag = DisposeBag()
     
@@ -34,7 +34,6 @@ final class RegistrationVM: PRegistrationVM {
             .observe(on: MainScheduler.instance)
             .subscribe(onSuccess: { response in
                 AppState.current.accessToken = response.token
-                print(AppState.current.accessToken)
                 self.view?.openHome()
             }, onFailure: { error in
                 self.view?.showAlert(message: error.localizedDescription, nil,
