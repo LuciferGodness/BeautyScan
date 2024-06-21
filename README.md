@@ -16,4 +16,4 @@
 
 #### Видео работы приложения:
 
-[![Видео работы приложения]]([https://ссылка_на_видео](https://drive.google.com/file/d/1bNRO3c7ss5sXdwPGRpceBENDgsKRBfA6/view?usp=drive_link))
+[![Видео работы приложения]](https://drive.google.com/file/d/1bNRO3c7ss5sXdwPGRpceBENDgsKRBfA6/view?usp=drive_link)
