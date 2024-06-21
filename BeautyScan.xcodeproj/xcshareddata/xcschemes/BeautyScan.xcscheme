@@ -76,7 +76,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OPENAI_API_KEY"
-            value = ""
+            value = "sk-proj-I5zRNEul8fyEATTSJ6ztT3BlbkFJTMfD2es1ZtL2H3A8AXPV"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
