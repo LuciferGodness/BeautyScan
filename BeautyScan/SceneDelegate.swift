@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setupRoot() {
         let rootViewController: UIViewController
-        print(AppState.current.accessToken)
         if AppState.current.accessToken == nil {
             rootViewController = RegistrationAssembler.assemble()
         } else {

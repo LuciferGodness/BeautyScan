@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="40" id="2rD-pd-vEP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <color key="textColor" name="gray"/>
+                                <color key="textColor" name="grayAsset"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pigmented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkJ-p7-U1q">
@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="height" constant="40" id="sVW-zW-LHp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <color key="textColor" name="gray"/>
+                                <color key="textColor" name="grayAsset"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e9-w8-GFc">
@@ -63,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="40" id="nPj-mi-Qdd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <color key="textColor" name="gray"/>
+                                <color key="textColor" name="grayAsset"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Oily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TW-ha-Rew">
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="40" id="OyV-ct-i3c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" name="gray"/>
+                                <color key="textColor" name="grayAsset"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -142,7 +142,7 @@
         <namedColor name="blackText">
             <color red="0.12941176470588237" green="0.12156862745098039" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="gray">
+        <namedColor name="grayAsset">
             <color red="0.30196078431372547" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteAsset">

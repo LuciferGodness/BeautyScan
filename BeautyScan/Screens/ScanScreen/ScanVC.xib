@@ -78,7 +78,7 @@
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <color key="baseForegroundColor" name="black"/>
+                        <color key="baseForegroundColor" name="blackAsset"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="openGallery" destination="-1" eventType="touchUpInside" id="a1K-mh-gjd"/>
@@ -136,9 +136,6 @@
     </objects>
     <resources>
         <image name="testImage" width="900" height="900"/>
-        <namedColor name="black">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="blackAsset">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

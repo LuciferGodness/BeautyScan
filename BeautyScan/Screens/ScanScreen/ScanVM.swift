@@ -53,7 +53,7 @@ final class ScanVM: PScanVM {
     
     private func configureTextRecognitionRequest(_ request: VNRecognizeTextRequest) {
         request.recognitionLanguages = ["English", "Русский"]
-        request.recognitionLevel = .fast
+        request.recognitionLevel = .accurate
     }
     
    func sendOpenAIRequest(_ requestChat: String) {

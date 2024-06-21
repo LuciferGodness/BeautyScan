@@ -16,10 +16,10 @@ final class AppState {
     private var delegate: RootViewControllerDelegate = SceneDelegate()
     static var current = AppState()
     
-    @UserDefault(key: UserDefaultsKey.oilySkin.rawValue, defaultValue: "") var oilySkin: String
-    @UserDefault(key: UserDefaultsKey.resistentSkin.rawValue, defaultValue: "") var resistentSkin: String
-    @UserDefault(key: UserDefaultsKey.pigmentedSkin.rawValue, defaultValue: "") var pigmentedSkin: String
-    @UserDefault(key: UserDefaultsKey.wrinkledSkin.rawValue, defaultValue: "") var wrinkledSkin: String
+    @UserDefault(key: UserDefaultsKey.oilySkin.rawValue, defaultValue: nil) var oilySkin: String?
+    @UserDefault(key: UserDefaultsKey.resistentSkin.rawValue, defaultValue: nil) var resistentSkin: String?
+    @UserDefault(key: UserDefaultsKey.pigmentedSkin.rawValue, defaultValue: nil) var pigmentedSkin: String?
+    @UserDefault(key: UserDefaultsKey.wrinkledSkin.rawValue, defaultValue: nil) var wrinkledSkin: String?
     @Keychain(key: .authToken) var accessToken: String?
     
     func logout() {

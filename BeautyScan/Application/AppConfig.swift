@@ -13,7 +13,7 @@ enum AppConfig {
     }
     
     static var ngrokDomain: String {
-        "https://7c42-91-197-3-158.ngrok-free.app"
+        "https://dec6-91-197-3-158.ngrok-free.app"
     }
     
     static var googleDomain: String {

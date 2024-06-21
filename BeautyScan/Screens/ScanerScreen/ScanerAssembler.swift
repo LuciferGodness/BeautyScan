@@ -14,7 +14,7 @@ enum ScanerAssembler {
         
         view.scannerViewModel = viewModel
         view.delegate = delegate
-        view.modalPresentationStyle = .overFullScreen
+        view.modalPresentationStyle = .popover
         viewModel.vc = view
         
         return view
