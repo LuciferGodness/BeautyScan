@@ -16,4 +16,5 @@
 
 #### Видео работы приложения:
 
-[![Видео работы приложения]](https://drive.google.com/file/d/1bNRO3c7ss5sXdwPGRpceBENDgsKRBfA6/view?usp=drive_link)
+[![Видео работы приложения]](https://drive.google.com/file/d/1bNRO3c7ss5sXdwPGRpceBENDgsKRBfA6/view?usp=sharing)
+[![Видео работы приложения]](https://drive.google.com/file/d/132bB37g0oiD0THOF5-e8JFJwU_LmWZT1/view?usp=sharing)
